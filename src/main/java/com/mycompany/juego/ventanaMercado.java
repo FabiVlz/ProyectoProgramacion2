@@ -23,18 +23,14 @@ public class ventanaMercado extends javax.swing.JFrame {
         this.merca = merca;
         this.merca.verJugadores();
         
-        panelJugadores.removeAll(); // limpiar primero
+        panelJugadores.removeAll();
 
         for (Jugador j : this.merca.JugadoresMercado) {
-            JButton boton = new JButton(j.getNombre());
-            panelJugadores.add(boton);
+            JButton nombreBoton = new JButton(j.getNombre());
+            panelJugadores.add(nombreBoton);
         }
-
-        int filas = (int) Math.ceil((double)(this.merca.JugadoresMercado.size()) /4);
-
-
+        int filas = (int) Math.ceil((double)(this.merca.JugadoresMercado.size())/4);
         panelJugadores.setPreferredSize(new Dimension(798, filas * 100));
-
         panelJugadores.revalidate();
         panelJugadores.repaint();
     }
