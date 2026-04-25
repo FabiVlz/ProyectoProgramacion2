@@ -9,7 +9,9 @@ public class Mercado {
 
     public void cargarJugadores(){
         Jugador messi = new Jugador("Messi");
+        Jugador cristiano = new Jugador("CR7");
         this.JugadoresMercado.add(messi);
+        this.JugadoresMercado.add(cristiano);
     }
     public void verJugadores(){
         for (Jugador j: this.JugadoresMercado){
