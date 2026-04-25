@@ -7,10 +7,9 @@ package com.mycompany.juego;
 public class Juego {
 
     public static void main(String[] args) {
-        Mercado merCa = new Mercado();
-        merCa.cargarJugadores();
-        merCa.verJugadores(JugadoresMercado);
-        ventanaMenu menu = new ventanaMenu();
+        Mercado merca = new Mercado();
+        merca.cargarJugadores();
+        ventanaMenu menu = new ventanaMenu(merca);
         menu.setVisible(true);
     }
 }
