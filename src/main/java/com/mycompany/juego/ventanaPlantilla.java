@@ -18,6 +18,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
      */
     public ventanaPlantilla() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

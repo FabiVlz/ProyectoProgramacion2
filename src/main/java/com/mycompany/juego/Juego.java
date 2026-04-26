@@ -9,7 +9,7 @@ public class Juego {
     public static void main(String[] args) {
         Mercado merca = new Mercado();
         merca.cargarJugadores();
-        ventanaMenu menu = new ventanaMenu(merca);
+        ventanaInicio menu = new ventanaInicio(merca);
         menu.setVisible(true);
     }
 }

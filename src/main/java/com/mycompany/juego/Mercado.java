@@ -37,9 +37,4 @@ public class Mercado {
         this.JugadoresMercado.add(monge);
         
     }
-    public void verJugadores(){
-        for (Jugador j: this.JugadoresMercado){
-            System.out.println(j.getNombre());
-        }
-    }
 }

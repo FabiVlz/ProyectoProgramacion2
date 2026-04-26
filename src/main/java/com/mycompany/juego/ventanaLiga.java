@@ -18,6 +18,7 @@ public class ventanaLiga extends javax.swing.JFrame {
      */
     public ventanaLiga() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
