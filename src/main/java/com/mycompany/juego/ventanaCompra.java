@@ -11,17 +11,21 @@ package com.mycompany.juego;
  */
 public class ventanaCompra extends javax.swing.JFrame {
     ventanaMercado mercado;
-    
+    Equipo equipo;
+    Jugador jugador;
     /**
      * Creates new form ventanaCompra
      * @param mercado
+     * @param equipo
+     * @param j
      */
-    public ventanaCompra(ventanaMercado mercado) {
+    public ventanaCompra(ventanaMercado mercado,Equipo equipo,Jugador j) {
         initComponents();
         this.mercado = mercado;
+        this.equipo = equipo;
+        this.jugador = j;
         setLocationRelativeTo(this.mercado);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,10 +49,12 @@ public class ventanaCompra extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(0, 255, 0));
         jButton1.setText("SI");
+        jButton1.setFocusable(false);
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jButton2.setBackground(new java.awt.Color(255, 0, 51));
         jButton2.setText("NO");
+        jButton2.setFocusable(false);
         jButton2.addActionListener(this::jButton2ActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -80,6 +86,7 @@ public class ventanaCompra extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        equipo.agregarJugadores(jugador);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

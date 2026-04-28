@@ -11,14 +11,16 @@ package com.mycompany.juego;
  */
 public class ventanaMenu extends javax.swing.JFrame {
     Mercado merca;
-   
+    Equipo equipo;
     /**
      * Creates new form ventanaJugar
      * @param merca
+     * @param equipo
      */
-    public ventanaMenu(Mercado merca) {
+    public ventanaMenu(Mercado merca, Equipo equipo) {
         initComponents();
         this.merca = merca;
+        this.equipo = equipo;
         setLocationRelativeTo(null);
     }
 
@@ -81,13 +83,13 @@ public class ventanaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonLigaActionPerformed
 
     private void BotonPlantillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPlantillaActionPerformed
-        ventanaPlantilla vP = new ventanaPlantilla();
+        ventanaPlantilla vP = new ventanaPlantilla(equipo,this);
         this.setVisible(false);
         vP.setVisible(true);
     }//GEN-LAST:event_BotonPlantillaActionPerformed
 
     private void BotonMercadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMercadoActionPerformed
-        ventanaMercado vM = new ventanaMercado(merca,this);
+        ventanaMercado vM = new ventanaMercado(merca,this,equipo);
         this.setVisible(false);
         vM.setVisible(true);
     }//GEN-LAST:event_BotonMercadoActionPerformed

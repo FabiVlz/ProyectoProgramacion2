@@ -1,5 +1,8 @@
 package com.mycompany.juego;
 
+import java.awt.Dimension;
+import javax.swing.JButton;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -10,14 +13,26 @@ package com.mycompany.juego;
  * @author yisus
  */
 public class ventanaPlantilla extends javax.swing.JFrame {
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ventanaPlantilla.class.getName());
-
+    Equipo equipo;
+    ventanaMenu menu;
     /**
      * Creates new form ventanaPlantilla
+     * @param equipo
+     * @param menu
      */
-    public ventanaPlantilla() {
+    public ventanaPlantilla(Equipo equipo,ventanaMenu menu) {
         initComponents();
+        this.equipo = equipo;
+        this.menu = menu;
+        for (Jugador j : this.equipo.jugadoresEquipo){
+            JButton nombreBoton = new JButton(j.getNombre());
+            panelJugadoresP.add(nombreBoton);
+            nombreBoton.setFocusPainted(false);
+        }
+        int filas = (int) Math.ceil((double)(this.equipo.jugadoresEquipo.size())/2);
+        panelJugadoresP.setPreferredSize(new Dimension(250, filas * 100));
+        panelJugadoresP.revalidate();
+        panelJugadoresP.repaint();
         setLocationRelativeTo(null);
     }
 
@@ -30,47 +45,52 @@ public class ventanaPlantilla extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelPlantilla = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        panelJugadoresP = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        panelPlantilla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        panelJugadoresP.setLayout(new java.awt.GridLayout(0, 2));
+        jScrollPane1.setViewportView(panelJugadoresP);
+
+        panelPlantilla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 250, 650));
+
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        jButton1.setText("Regresar");
+        jButton1.setFocusPainted(false);
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+        panelPlantilla.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 950, Short.MAX_VALUE)
+            .addComponent(panelPlantilla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
+            .addComponent(panelPlantilla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new ventanaPlantilla().setVisible(true));
-    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setVisible(false);
+        menu.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel panelJugadoresP;
+    private javax.swing.JPanel panelPlantilla;
     // End of variables declaration//GEN-END:variables
 }

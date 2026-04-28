@@ -14,15 +14,18 @@ import javax.swing.JButton;
 public class ventanaMercado extends javax.swing.JFrame {
     Mercado merca;
     ventanaMenu menu;
+    Equipo equipo;
     /**
      * Creates new form ventanaMercado
      * @param merca
      * @param menu
+     * @param equipo
      */
-    public ventanaMercado(Mercado merca, ventanaMenu menu) {
+    public ventanaMercado(Mercado merca, ventanaMenu menu, Equipo equipo) {
         initComponents();
         this.merca = merca;
         this.menu = menu;
+        this.equipo = equipo;
         
         panelJugadores.removeAll();
 
@@ -31,7 +34,7 @@ public class ventanaMercado extends javax.swing.JFrame {
             panelJugadores.add(nombreBoton);
             nombreBoton.setFocusPainted(false);
             nombreBoton.addActionListener(e -> {
-                ventanaCompra vC = new ventanaCompra(this);
+                ventanaCompra vC = new ventanaCompra(this,equipo,j);
                 vC.setVisible(true);
             });
         }

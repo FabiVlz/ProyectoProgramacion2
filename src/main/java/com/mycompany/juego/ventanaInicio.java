@@ -9,14 +9,16 @@ package com.mycompany.juego;
  */
 public class ventanaInicio extends javax.swing.JFrame {
     Mercado merca;
-    
+    Equipo equipo;
     /**
      * Creates new form ventanaMenu
      * @param merca
+     * @param equipo
      */
-    public ventanaInicio(Mercado merca) {
+    public ventanaInicio(Mercado merca,Equipo equipo) {
         initComponents();
         this.merca = merca;
+        this.equipo = equipo;
         setLocationRelativeTo(null);
     }
 
@@ -37,7 +39,7 @@ public class ventanaInicio extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BotonTerminar.setBackground(new java.awt.Color(204, 204, 204));
+        BotonTerminar.setBackground(new java.awt.Color(102, 102, 102));
         BotonTerminar.setFont(new java.awt.Font("Unispace", 0, 30)); // NOI18N
         BotonTerminar.setText("SALIR");
         BotonTerminar.setBorder(null);
@@ -60,7 +62,7 @@ public class ventanaInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonEmpezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEmpezarActionPerformed
-        ventanaMenu ventana2 = new ventanaMenu(merca);
+        ventanaMenu ventana2 = new ventanaMenu(merca,equipo);
         ventana2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BotonEmpezarActionPerformed
