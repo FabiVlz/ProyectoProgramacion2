@@ -59,7 +59,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         panelJugadoresP.setLayout(new java.awt.GridLayout(0, 2));
         jScrollPane1.setViewportView(panelJugadoresP);
 
-        panelPlantilla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 250, 650));
+        panelPlantilla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 320, 650));
 
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N

@@ -1,17 +1,37 @@
 package com.mycompany.juego;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Bilsox
  */
 public class Equipo {
     private String nombre;
+    protected double dinero = 50000000;
     ArrayList<Jugador> jugadoresEquipo = new ArrayList <>();
 
-    public void agregarJugadores(Jugador j){
-        this.jugadoresEquipo.add(j);
+    public String agregarJugadores(Jugador j, ventanaMercado mercado){
+        if (j.isComprado()){
+            JOptionPane.showMessageDialog(mercado, "Este jugador no esta disponible");
+            return String.valueOf(dinero);
+        } else {
+            if (dinero >= j.getPrecio()){
+                this.jugadoresEquipo.add(j);
+                j.setComprado(true);
+                dinero -= j.getPrecio();
+                return String.valueOf(dinero);
+            }
+            else{
+                JOptionPane.showMessageDialog(mercado, "Dinero insuficiente");
+                return String.valueOf(dinero);
+            }
+            
+        }
     }
     public String getNombre() {
         return nombre;
+    }
+    public double getDinero() {
+        return dinero;
     }
 }
