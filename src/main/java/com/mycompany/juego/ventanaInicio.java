@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.juego;
+
+import java.util.ArrayList;
+import javax.swing.JButton;
+
 /**
  *
  * @author yisus
@@ -10,15 +14,18 @@ package com.mycompany.juego;
 public class ventanaInicio extends javax.swing.JFrame {
     Mercado merca;
     Equipo equipo;
+    ArrayList<JButton> botones;
     /**
      * Creates new form ventanaMenu
      * @param merca
      * @param equipo
+     * @param botones
      */
-    public ventanaInicio(Mercado merca,Equipo equipo) {
+    public ventanaInicio(Mercado merca,Equipo equipo,ArrayList<JButton> botones) {
         initComponents();
         this.merca = merca;
         this.equipo = equipo;
+        this.botones = botones;
         setLocationRelativeTo(null);
     }
 
@@ -62,7 +69,7 @@ public class ventanaInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonEmpezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEmpezarActionPerformed
-        ventanaMenu ventana2 = new ventanaMenu(merca,equipo);
+        ventanaMenu ventana2 = new ventanaMenu(merca,equipo,botones);
         ventana2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BotonEmpezarActionPerformed

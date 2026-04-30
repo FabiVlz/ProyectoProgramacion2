@@ -1,5 +1,8 @@
 package com.mycompany.juego;
 
+import java.util.ArrayList;
+import javax.swing.JButton;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -12,15 +15,18 @@ package com.mycompany.juego;
 public class ventanaMenu extends javax.swing.JFrame {
     Mercado merca;
     Equipo equipo;
+    ArrayList<JButton> botones;
     /**
      * Creates new form ventanaJugar
      * @param merca
      * @param equipo
+     * @param botones
      */
-    public ventanaMenu(Mercado merca, Equipo equipo) {
+    public ventanaMenu(Mercado merca, Equipo equipo,ArrayList<JButton> botones) {
         initComponents();
         this.merca = merca;
         this.equipo = equipo;
+        this.botones = botones;
         setLocationRelativeTo(null);
     }
 
@@ -83,7 +89,7 @@ public class ventanaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonLigaActionPerformed
 
     private void BotonPlantillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPlantillaActionPerformed
-        ventanaPlantilla vP = new ventanaPlantilla(equipo,this);
+        ventanaPlantilla vP = new ventanaPlantilla(equipo,this,botones);
         this.setVisible(false);
         vP.setVisible(true);
     }//GEN-LAST:event_BotonPlantillaActionPerformed

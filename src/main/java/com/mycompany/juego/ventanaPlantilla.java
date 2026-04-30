@@ -1,6 +1,7 @@
 package com.mycompany.juego;
 
 import java.awt.Dimension;
+import java.util.ArrayList;
 import javax.swing.JButton;
 
 /*
@@ -15,24 +16,25 @@ import javax.swing.JButton;
 public class ventanaPlantilla extends javax.swing.JFrame {
     Equipo equipo;
     ventanaMenu menu;
+   
     /**
      * Creates new form ventanaPlantilla
      * @param equipo
      * @param menu
+     * @param botones
      */
-    public ventanaPlantilla(Equipo equipo,ventanaMenu menu) {
+    public ventanaPlantilla(Equipo equipo,ventanaMenu menu,ArrayList<JButton> botones) {
         initComponents();
         this.equipo = equipo;
         this.menu = menu;
-        for (Jugador j : this.equipo.jugadoresEquipo){
-            JButton nombreBoton = new JButton(j.getNombre());
-            panelJugadoresP.add(nombreBoton);
-            nombreBoton.setFocusPainted(false);
+        
+        for (JButton b: botones){
+            panelJugadoresP.add(b);
+            panelJugadoresP.revalidate();
+            panelJugadoresP.repaint();
         }
-        int filas = (int) Math.ceil((double)(this.equipo.jugadoresEquipo.size())/2);
-        panelJugadoresP.setPreferredSize(new Dimension(250, filas * 100));
-        panelJugadoresP.revalidate();
-        panelJugadoresP.repaint();
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(20);
+        panelJugadoresP.setPreferredSize(new Dimension(330,1600));
         setLocationRelativeTo(null);
     }
 
@@ -49,17 +51,19 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         panelJugadoresP = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panelPlantilla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        panelJugadoresP.setLayout(new java.awt.GridLayout(0, 2));
+        panelJugadoresP.setLayout(new java.awt.GridLayout(0, 2, 2, 0));
         jScrollPane1.setViewportView(panelJugadoresP);
 
-        panelPlantilla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 320, 650));
+        panelPlantilla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 330, 650));
 
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
@@ -67,6 +71,19 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         jButton1.setFocusPainted(false);
         jButton1.addActionListener(this::jButton1ActionPerformed);
         panelPlantilla.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+        );
+
+        panelPlantilla.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, 10, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -89,6 +106,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panelJugadoresP;
     private javax.swing.JPanel panelPlantilla;
