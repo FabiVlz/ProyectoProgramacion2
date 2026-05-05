@@ -1,4 +1,6 @@
 package com.mycompany.juego;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,19 +16,25 @@ public class ventanaCompra extends javax.swing.JFrame {
     Equipo equipo;
     Jugador jugador;
     JTextField texto;
+    JButton boton;
+    JPanel panel;
     /**
      * Creates new form ventanaCompra
      * @param mercado
      * @param equipo
      * @param j
      * @param texto
+     * @param boton
+     * @param panel
      */
-    public ventanaCompra(ventanaMercado mercado,Equipo equipo,Jugador j,JTextField texto) {
+    public ventanaCompra(ventanaMercado mercado,Equipo equipo,Jugador j,JTextField texto,JButton boton,JPanel panel) {
         initComponents();
         this.mercado = mercado;
         this.equipo = equipo;
         this.jugador = j;
         this.texto = texto;
+        this.boton = boton;
+        this.panel = panel;
         setLocationRelativeTo(this.mercado);
     }
     /**
@@ -88,7 +96,7 @@ public class ventanaCompra extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        texto.setText(equipo.agregarJugadores(jugador,this.mercado));
+        texto.setText(equipo.agregarJugadores(jugador,mercado,boton,panel));
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

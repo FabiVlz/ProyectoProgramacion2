@@ -29,15 +29,23 @@ public class ventanaMercado extends javax.swing.JFrame {
         this.equipo = equipo;
         textoDinero.setText(String.valueOf(this.equipo.getDinero()));
         panelJugadores.removeAll();
-
+        jScrollPane2.getVerticalScrollBar().setUnitIncrement(20);
+        this.merca.JugadoresMercado.sort((a,b)-> Boolean.compare(a.isComprado(),b.isComprado()));
+ 
         for (Jugador j : this.merca.JugadoresMercado) {
             JButton boton = new JButton();
-            boton.setIcon(new ImageIcon(getClass().getResource(j.getImagen())));
+            if (j.isComprado()){
+                boton.setIcon(null);
+                boton.setText("COMPRADO");
+            }
+            else{
+                boton.setIcon(new ImageIcon(getClass().getResource(j.getImagen())));
+            }
             panelJugadores.add(boton);
             boton.setContentAreaFilled(false);
             boton.setFocusPainted(false);
             boton.addActionListener(e -> {
-                ventanaCompra vC = new ventanaCompra(this,equipo,j,textoDinero);
+                ventanaCompra vC = new ventanaCompra(this,equipo,j,textoDinero,boton,panelJugadores);
                 vC.setVisible(true);
             });
         }
@@ -63,6 +71,7 @@ public class ventanaMercado extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         panelJugadores.setRequestFocusEnabled(false);
         panelJugadores.setLayout(new java.awt.GridLayout(0, 5));
@@ -85,7 +94,7 @@ public class ventanaMercado extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(textoDinero, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(textoDinero, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(132, Short.MAX_VALUE)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)))

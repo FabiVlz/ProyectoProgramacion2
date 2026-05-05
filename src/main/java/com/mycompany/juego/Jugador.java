@@ -7,10 +7,10 @@ package com.mycompany.juego;
 public class Jugador{
     private String nombre;
     private boolean comprado = false;
-    private double precio;
+    private int precio;
     private String imagen;
     
-    public Jugador(String nombre, double precio,String imagen) {
+    public Jugador(String nombre, int precio,String imagen) {
         this.nombre = nombre;
         this.precio = precio;
         this.imagen = imagen;
@@ -31,7 +31,7 @@ public class Jugador{
     public void setComprado(boolean comprado) {
         this.comprado = comprado;
     }
-    public double getPrecio() {
+    public int getPrecio() {
         return precio;
     }
 

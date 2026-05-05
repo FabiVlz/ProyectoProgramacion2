@@ -48,14 +48,23 @@ public class ventanaPlantilla extends javax.swing.JFrame {
     private void initComponents() {
 
         panelPlantilla = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         panelJugadoresP = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        delantero1 = new javax.swing.JLabel();
+        delantero2 = new javax.swing.JLabel();
+        defensa1 = new javax.swing.JLabel();
+        defensa2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panelPlantilla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel1.setOpaque(true);
+        panelPlantilla.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 160, 200));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -85,6 +94,22 @@ public class ventanaPlantilla extends javax.swing.JFrame {
 
         panelPlantilla.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, 10, 650));
 
+        delantero1.setBackground(new java.awt.Color(102, 102, 102));
+        delantero1.setOpaque(true);
+        panelPlantilla.add(delantero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 160, 200));
+
+        delantero2.setBackground(new java.awt.Color(102, 102, 102));
+        delantero2.setOpaque(true);
+        panelPlantilla.add(delantero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 160, 200));
+
+        defensa1.setBackground(new java.awt.Color(102, 102, 102));
+        defensa1.setOpaque(true);
+        panelPlantilla.add(defensa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 160, 200));
+
+        defensa2.setBackground(new java.awt.Color(102, 102, 102));
+        defensa2.setOpaque(true);
+        panelPlantilla.add(defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 160, 200));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -105,7 +130,12 @@ public class ventanaPlantilla extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel defensa1;
+    private javax.swing.JLabel defensa2;
+    private javax.swing.JLabel delantero1;
+    private javax.swing.JLabel delantero2;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panelJugadoresP;
