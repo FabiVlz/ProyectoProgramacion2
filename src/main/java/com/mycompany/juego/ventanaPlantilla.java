@@ -48,7 +48,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
     private void initComponents() {
 
         panelPlantilla = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        portero = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         panelJugadoresP = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -62,9 +62,14 @@ public class ventanaPlantilla extends javax.swing.JFrame {
 
         panelPlantilla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setBackground(new java.awt.Color(102, 102, 102));
-        jLabel1.setOpaque(true);
-        panelPlantilla.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 160, 200));
+        portero.setBackground(new java.awt.Color(102, 102, 102));
+        portero.setOpaque(true);
+        portero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                porteroMouseClicked(evt);
+            }
+        });
+        panelPlantilla.add(portero, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 160, 200));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -96,18 +101,38 @@ public class ventanaPlantilla extends javax.swing.JFrame {
 
         delantero1.setBackground(new java.awt.Color(102, 102, 102));
         delantero1.setOpaque(true);
+        delantero1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                delantero1MouseClicked(evt);
+            }
+        });
         panelPlantilla.add(delantero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 160, 200));
 
         delantero2.setBackground(new java.awt.Color(102, 102, 102));
         delantero2.setOpaque(true);
+        delantero2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                delantero2MouseClicked(evt);
+            }
+        });
         panelPlantilla.add(delantero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 160, 200));
 
         defensa1.setBackground(new java.awt.Color(102, 102, 102));
         defensa1.setOpaque(true);
+        defensa1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                defensa1MouseClicked(evt);
+            }
+        });
         panelPlantilla.add(defensa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 160, 200));
 
         defensa2.setBackground(new java.awt.Color(102, 102, 102));
         defensa2.setOpaque(true);
+        defensa2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                defensa2MouseClicked(evt);
+            }
+        });
         panelPlantilla.add(defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 160, 200));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -129,16 +154,36 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         menu.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void delantero1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delantero1MouseClicked
+        equipo.ponerTitular("DELANTERO1",delantero1);
+    }//GEN-LAST:event_delantero1MouseClicked
+
+    private void delantero2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delantero2MouseClicked
+        equipo.ponerTitular("DELANTERO2",delantero2);
+    }//GEN-LAST:event_delantero2MouseClicked
+
+    private void defensa1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_defensa1MouseClicked
+        equipo.ponerTitular("DEFENSA1",defensa1);
+    }//GEN-LAST:event_defensa1MouseClicked
+
+    private void defensa2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_defensa2MouseClicked
+        equipo.ponerTitular("DEFENSA2",defensa2);
+    }//GEN-LAST:event_defensa2MouseClicked
+
+    private void porteroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_porteroMouseClicked
+        equipo.ponerTitular("PORTERO",portero);
+    }//GEN-LAST:event_porteroMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel defensa1;
     private javax.swing.JLabel defensa2;
     private javax.swing.JLabel delantero1;
     private javax.swing.JLabel delantero2;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panelJugadoresP;
     private javax.swing.JPanel panelPlantilla;
+    private javax.swing.JLabel portero;
     // End of variables declaration//GEN-END:variables
 }
