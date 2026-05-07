@@ -1,7 +1,9 @@
 package com.mycompany.juego;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /*
@@ -27,6 +29,55 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         initComponents();
         this.equipo = equipo;
         this.menu = menu;
+        
+        for ( String clave : equipo.titulares.keySet()){
+            if (clave.equals("DELANTERO1")){
+                if (equipo.titulares.get(clave) == null){
+                    delantero1.setIcon(null);
+                }
+                else{
+                    delantero1.setIcon(new ImageIcon(getClass().getResource(equipo.titulares.get(clave).getImagen())));
+                    delantero1.setBackground(Color.black);
+                }
+            }
+            else if (clave.equals("DELANTERO2")){
+                if (equipo.titulares.get(clave) == null){
+                    delantero2.setIcon(null);
+                }
+                else{
+                    delantero2.setIcon(new ImageIcon(getClass().getResource(equipo.titulares.get(clave).getImagen())));
+                    delantero2.setBackground(Color.black);
+                }
+            }
+            else if (clave.equals("DEFENSA1")){
+                if (equipo.titulares.get(clave) == null){
+                    defensa1.setIcon(null);
+                }
+                else{
+                    defensa1.setIcon(new ImageIcon(getClass().getResource(equipo.titulares.get(clave).getImagen())));
+                    defensa1.setBackground(Color.black);
+                }
+            }
+            else if (clave.equals("DEFENSA2")){
+                if (equipo.titulares.get(clave) == null){
+                    defensa2.setIcon(null);
+                }
+                else{
+                    defensa2.setIcon(new ImageIcon(getClass().getResource(equipo.titulares.get(clave).getImagen())));
+                    defensa2.setBackground(Color.black);
+                }
+            }
+            else if (clave.equals("PORTERO")){
+                if (equipo.titulares.get(clave) == null){
+                    portero.setIcon(null);
+                }
+                else{
+                    portero.setIcon(new ImageIcon(getClass().getResource(equipo.titulares.get(clave).getImagen())));
+                    portero.setBackground(Color.black);
+                }
+            }
+            
+        }
         
         for (JButton b: botones){
             panelJugadoresP.add(b);
@@ -57,9 +108,11 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         delantero2 = new javax.swing.JLabel();
         defensa1 = new javax.swing.JLabel();
         defensa2 = new javax.swing.JLabel();
+        botonVender = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        panelPlantilla.setBackground(new java.awt.Color(0, 0, 0));
         panelPlantilla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         portero.setBackground(new java.awt.Color(102, 102, 102));
@@ -69,7 +122,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 porteroMouseClicked(evt);
             }
         });
-        panelPlantilla.add(portero, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 160, 200));
+        panelPlantilla.add(portero, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 160, 199));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -106,7 +159,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 delantero1MouseClicked(evt);
             }
         });
-        panelPlantilla.add(delantero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 160, 200));
+        panelPlantilla.add(delantero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 160, 199));
 
         delantero2.setBackground(new java.awt.Color(102, 102, 102));
         delantero2.setOpaque(true);
@@ -115,7 +168,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 delantero2MouseClicked(evt);
             }
         });
-        panelPlantilla.add(delantero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 160, 200));
+        panelPlantilla.add(delantero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 160, 199));
 
         defensa1.setBackground(new java.awt.Color(102, 102, 102));
         defensa1.setOpaque(true);
@@ -124,7 +177,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 defensa1MouseClicked(evt);
             }
         });
-        panelPlantilla.add(defensa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 160, 200));
+        panelPlantilla.add(defensa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 160, 199));
 
         defensa2.setBackground(new java.awt.Color(102, 102, 102));
         defensa2.setOpaque(true);
@@ -133,7 +186,13 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 defensa2MouseClicked(evt);
             }
         });
-        panelPlantilla.add(defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 160, 200));
+        panelPlantilla.add(defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 160, 199));
+
+        botonVender.setBackground(new java.awt.Color(204, 0, 0));
+        botonVender.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        botonVender.setText("VENDER");
+        botonVender.addActionListener(this::botonVenderActionPerformed);
+        panelPlantilla.add(botonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 573, 90, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -155,26 +214,31 @@ public class ventanaPlantilla extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void delantero1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delantero1MouseClicked
-        equipo.ponerTitular("DELANTERO1",delantero1);
+        equipo.ponerTitular("DELANTERO1",delantero1,this);
     }//GEN-LAST:event_delantero1MouseClicked
 
     private void delantero2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delantero2MouseClicked
-        equipo.ponerTitular("DELANTERO2",delantero2);
+        equipo.ponerTitular("DELANTERO2",delantero2,this);
     }//GEN-LAST:event_delantero2MouseClicked
 
     private void defensa1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_defensa1MouseClicked
-        equipo.ponerTitular("DEFENSA1",defensa1);
+        equipo.ponerTitular("DEFENSA1",defensa1,this);
     }//GEN-LAST:event_defensa1MouseClicked
 
     private void defensa2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_defensa2MouseClicked
-        equipo.ponerTitular("DEFENSA2",defensa2);
+        equipo.ponerTitular("DEFENSA2",defensa2,this);
     }//GEN-LAST:event_defensa2MouseClicked
 
     private void porteroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_porteroMouseClicked
-        equipo.ponerTitular("PORTERO",portero);
+        equipo.ponerTitular("PORTERO",portero,this);
     }//GEN-LAST:event_porteroMouseClicked
 
+    private void botonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVenderActionPerformed
+        equipo.venderJugador(this);
+    }//GEN-LAST:event_botonVenderActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonVender;
     private javax.swing.JLabel defensa1;
     private javax.swing.JLabel defensa2;
     private javax.swing.JLabel delantero1;

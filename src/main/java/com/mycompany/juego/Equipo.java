@@ -1,4 +1,6 @@
 package com.mycompany.juego;
+import java.awt.Color;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.ImageIcon;
@@ -44,6 +46,7 @@ public class Equipo {
                     for(JButton b : botones){
                         if (b.getIcon() == null){
                             b.setIcon(new ImageIcon(getClass().getResource(j.getImagen())));
+                            b.putClientProperty("jugador",j);
                             b.addActionListener(e -> {this.jugadorSeleccionado = j;});
                             b.setText("");
                             b.revalidate();
@@ -84,10 +87,69 @@ public class Equipo {
         return dinero;
     }
     
-    public void ponerTitular(String posicion,JLabel jugadorTitular){
-        titulares.replace(posicion,this.jugadorSeleccionado);
-        jugadorTitular.setIcon(new ImageIcon(getClass().getResource(this.jugadorSeleccionado.getImagen())));
-        jugadorSeleccionado = null;
-        System.out.println(titulares);
+    public void ponerTitular(String posicion,JLabel jugadorTitular,ventanaPlantilla vP){
+        if (jugadorSeleccionado == null){
+            JOptionPane.showMessageDialog(vP, "Seleccione un jugador");
+        }
+        else{
+            if (jugadorSeleccionado.isTitular()){
+                JOptionPane.showMessageDialog(vP, "Este Jugador ya esta en tu equipo");
+                jugadorSeleccionado = null;
+            }
+            else{
+                if (jugadorTitular.getIcon() == null){
+                    titulares.replace(posicion,jugadorSeleccionado);
+                    jugadorTitular.setIcon(new ImageIcon(getClass().getResource(jugadorSeleccionado.getImagen())));
+                    jugadorSeleccionado.setTitular(true);
+                    jugadorSeleccionado = null;
+                    System.out.println(titulares);
+                }
+                else {
+                    JOptionPane.showMessageDialog(vP, "Ya hay un jugador en este lugar");
+                    jugadorSeleccionado = null;
+                    ventanaQuitarTitular vQT = new ventanaQuitarTitular(posicion,jugadorTitular,titulares,vP);
+                    vQT.setVisible(true);
+                }
+            }
+        }
+    }
+    public void venderJugador(ventanaPlantilla vP){
+        int c = 1;
+        if (jugadorSeleccionado == null){
+            JOptionPane.showMessageDialog(vP, "Seleccione un jugador");
+        }
+        else{
+            if (jugadorSeleccionado.isTitular()){
+                JOptionPane.showMessageDialog(vP, "Este Jugador es titular, primero quitalo");
+                jugadorSeleccionado = null;
+            }
+            else{
+                for(JButton b : botones){
+                    Object jugadorBuscado = b.getClientProperty("jugador");
+                    
+                    if (( jugadorBuscado != null && ((Jugador)jugadorBuscado).getNombre().equals(jugadorSeleccionado.getNombre()))){
+                        b.setIcon(null);
+                        for (ActionListener aC : b.getActionListeners()){
+                            b.removeActionListener(aC);
+                        }
+                        b.addActionListener(null);
+                        b.setText("VACIO");
+                        jugadorSeleccionado.setComprado(false);
+                        jugadoresEquipo.remove(jugadorSeleccionado);
+                        dinero += (jugadorSeleccionado.getPrecio()*0.65);
+                        jugadorSeleccionado = null;
+                        b.putClientProperty("jugador",null);
+                        b.revalidate();
+                        b.repaint();
+                        break;
+                    }
+                    else{
+                        System.out.println(b.getIcon());
+                        System.out.println(c + "No encontrado");
+                    }
+                    c++;
+                }
+            }
+        }
     }
 }
