@@ -1,5 +1,4 @@
 package com.mycompany.juego;
-import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +14,9 @@ import javax.swing.JPanel;
 public class Equipo {
     private String nombre;
     private boolean completo = false;
+    private boolean listo = false;
     protected int dinero = 50000000;
+    private int media; 
     ArrayList<Jugador> jugadoresEquipo = new ArrayList <>();
     ArrayList<JButton> botones;
     Jugador jugadorSeleccionado = null;
@@ -68,7 +69,6 @@ public class Equipo {
             return String.valueOf(dinero);
         }   
     }
-    
     public boolean isCompleto(){
         return completo;
     }
@@ -86,8 +86,7 @@ public class Equipo {
     public int getDinero() {
         return dinero;
     }
-    
-    public void ponerTitular(String posicion,JLabel jugadorTitular,ventanaPlantilla vP){
+    public void ponerTitular(String posicion,JLabel jugadorTitular,ventanaPlantilla vP,JLabel textoMedia){
         if (jugadorSeleccionado == null){
             JOptionPane.showMessageDialog(vP, "Seleccione un jugador");
         }
@@ -102,12 +101,13 @@ public class Equipo {
                     jugadorTitular.setIcon(new ImageIcon(getClass().getResource(jugadorSeleccionado.getImagen())));
                     jugadorSeleccionado.setTitular(true);
                     jugadorSeleccionado = null;
+                    textoMedia.setText(String.valueOf(calcularMedia()));
                     System.out.println(titulares);
                 }
                 else {
                     JOptionPane.showMessageDialog(vP, "Ya hay un jugador en este lugar");
                     jugadorSeleccionado = null;
-                    ventanaQuitarTitular vQT = new ventanaQuitarTitular(posicion,jugadorTitular,titulares,vP);
+                    ventanaQuitarTitular vQT = new ventanaQuitarTitular(posicion,jugadorTitular,titulares,vP,textoMedia,this);
                     vQT.setVisible(true);
                 }
             }
@@ -151,5 +151,23 @@ public class Equipo {
                 }
             }
         }
+    }
+    public void setListo(){
+        listo = titulares.get("DELANTERO1") != null && titulares.get("DELANTERO2") != null && titulares.get("DEFENSA1") != null && titulares.get("DEFENSA2") != null && titulares.get("PORTERO") != null;
+    }
+    public boolean isListo(){
+        return listo;
+    }
+    public int calcularMedia(){
+        int contador = 0;
+        for (String clave : titulares.keySet()){
+            if (titulares.get(clave) != null){
+                contador += titulares.get(clave).getMedia();
+            }
+            else{
+                contador += 0;
+            }
+        }
+        return (contador/5);
     }
 }

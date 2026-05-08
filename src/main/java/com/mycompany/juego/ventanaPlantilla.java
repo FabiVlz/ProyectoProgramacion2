@@ -1,6 +1,5 @@
 package com.mycompany.juego;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -30,6 +29,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         this.equipo = equipo;
         this.menu = menu;
         
+        textoMedia.setText(String.valueOf(equipo.calcularMedia()));
         for ( String clave : equipo.titulares.keySet()){
             if (clave.equals("DELANTERO1")){
                 if (equipo.titulares.get(clave) == null){
@@ -37,7 +37,6 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 }
                 else{
                     delantero1.setIcon(new ImageIcon(getClass().getResource(equipo.titulares.get(clave).getImagen())));
-                    delantero1.setBackground(Color.black);
                 }
             }
             else if (clave.equals("DELANTERO2")){
@@ -46,7 +45,6 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 }
                 else{
                     delantero2.setIcon(new ImageIcon(getClass().getResource(equipo.titulares.get(clave).getImagen())));
-                    delantero2.setBackground(Color.black);
                 }
             }
             else if (clave.equals("DEFENSA1")){
@@ -55,7 +53,6 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 }
                 else{
                     defensa1.setIcon(new ImageIcon(getClass().getResource(equipo.titulares.get(clave).getImagen())));
-                    defensa1.setBackground(Color.black);
                 }
             }
             else if (clave.equals("DEFENSA2")){
@@ -64,7 +61,6 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 }
                 else{
                     defensa2.setIcon(new ImageIcon(getClass().getResource(equipo.titulares.get(clave).getImagen())));
-                    defensa2.setBackground(Color.black);
                 }
             }
             else if (clave.equals("PORTERO")){
@@ -73,7 +69,6 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 }
                 else{
                     portero.setIcon(new ImageIcon(getClass().getResource(equipo.titulares.get(clave).getImagen())));
-                    portero.setBackground(Color.black);
                 }
             }
             
@@ -99,6 +94,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
     private void initComponents() {
 
         panelPlantilla = new javax.swing.JPanel();
+        textoMedia = new javax.swing.JLabel();
         portero = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         panelJugadoresP = new javax.swing.JPanel();
@@ -114,6 +110,10 @@ public class ventanaPlantilla extends javax.swing.JFrame {
 
         panelPlantilla.setBackground(new java.awt.Color(0, 0, 0));
         panelPlantilla.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        textoMedia.setFont(new java.awt.Font("Segoe UI Black", 0, 48)); // NOI18N
+        textoMedia.setForeground(new java.awt.Color(255, 255, 255));
+        panelPlantilla.add(textoMedia, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 60, 70));
 
         portero.setBackground(new java.awt.Color(102, 102, 102));
         portero.setOpaque(true);
@@ -214,23 +214,23 @@ public class ventanaPlantilla extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void delantero1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delantero1MouseClicked
-        equipo.ponerTitular("DELANTERO1",delantero1,this);
+        equipo.ponerTitular("DELANTERO1",delantero1,this,textoMedia);
     }//GEN-LAST:event_delantero1MouseClicked
 
     private void delantero2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delantero2MouseClicked
-        equipo.ponerTitular("DELANTERO2",delantero2,this);
+        equipo.ponerTitular("DELANTERO2",delantero2,this,textoMedia);
     }//GEN-LAST:event_delantero2MouseClicked
 
     private void defensa1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_defensa1MouseClicked
-        equipo.ponerTitular("DEFENSA1",defensa1,this);
+        equipo.ponerTitular("DEFENSA1",defensa1,this,textoMedia);
     }//GEN-LAST:event_defensa1MouseClicked
 
     private void defensa2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_defensa2MouseClicked
-        equipo.ponerTitular("DEFENSA2",defensa2,this);
+        equipo.ponerTitular("DEFENSA2",defensa2,this,textoMedia);
     }//GEN-LAST:event_defensa2MouseClicked
 
     private void porteroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_porteroMouseClicked
-        equipo.ponerTitular("PORTERO",portero,this);
+        equipo.ponerTitular("PORTERO",portero,this,textoMedia);
     }//GEN-LAST:event_porteroMouseClicked
 
     private void botonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVenderActionPerformed
@@ -249,5 +249,6 @@ public class ventanaPlantilla extends javax.swing.JFrame {
     private javax.swing.JPanel panelJugadoresP;
     private javax.swing.JPanel panelPlantilla;
     private javax.swing.JLabel portero;
+    private javax.swing.JLabel textoMedia;
     // End of variables declaration//GEN-END:variables
 }

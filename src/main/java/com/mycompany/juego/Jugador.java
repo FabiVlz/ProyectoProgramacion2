@@ -10,11 +10,13 @@ public class Jugador{
     private boolean titular = false;
     private int precio;
     private String imagen;
+    private int media;
     
-    public Jugador(String nombre, int precio,String imagen) {
+    public Jugador(String nombre, int precio,String imagen,int media) {
         this.nombre = nombre;
         this.precio = precio;
         this.imagen = imagen;
+        this.media = media;
     } 
 
     public String getNombre() {
@@ -40,9 +42,10 @@ public class Jugador{
     public int getPrecio() {
         return precio;
     }
-
     public String getImagen() {
         return imagen;
     }
-    
+    public int getMedia(){
+        return media;
+    }
 }

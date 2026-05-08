@@ -16,18 +16,24 @@ public class ventanaQuitarTitular extends javax.swing.JFrame {
     String posicion;
     JLabel jugadorTitular;
     HashMap<String,Jugador> titulares;
+    JLabel textoMedia;
+    Equipo equipo;
     /**
      * Creates new form ventanaQuitarTitular
      * @param posicion
      * @param jugadorTitular
      * @param titulares
      * @param vP
+     * @param textoMedia
+     * @param equipo
      */
-    public ventanaQuitarTitular(String posicion,JLabel jugadorTitular,HashMap<String,Jugador> titulares,ventanaPlantilla vP) {
+    public ventanaQuitarTitular(String posicion,JLabel jugadorTitular,HashMap<String,Jugador> titulares,ventanaPlantilla vP,JLabel textoMedia,Equipo equipo) {
         initComponents();
         this.posicion = posicion;
         this.jugadorTitular = jugadorTitular;
         this.titulares = titulares;
+        this.textoMedia = textoMedia;
+        this.equipo = equipo;
         setLocationRelativeTo(vP);
     }
 
@@ -98,6 +104,7 @@ public class ventanaQuitarTitular extends javax.swing.JFrame {
         titulares.get(posicion).setTitular(false);
         titulares.replace(posicion, null);
         jugadorTitular.setIcon(null);
+        textoMedia.setText(String.valueOf(equipo.calcularMedia()));
         this.dispose();
     }//GEN-LAST:event_botonQuitarActionPerformed
 

@@ -2,6 +2,7 @@ package com.mycompany.juego;
 
 import java.util.ArrayList;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -83,9 +84,16 @@ public class ventanaMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonLigaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLigaActionPerformed
-        ventanaLiga vL = new ventanaLiga();
-        this.setVisible(false);
-        vL.setVisible(true);
+        equipo.setListo();
+        
+        if (equipo.isListo()){
+            ventanaLiga vL = new ventanaLiga(this);
+            this.setVisible(false);
+            vL.setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Primero completa tu equipo");
+        }
     }//GEN-LAST:event_BotonLigaActionPerformed
 
     private void BotonPlantillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPlantillaActionPerformed
