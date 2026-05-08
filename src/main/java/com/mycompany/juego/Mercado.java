@@ -52,7 +52,7 @@ public class Mercado {
         Jugador mbappe = new Jugador("Mbappe",1000000,"/com/mycompany/juego/imagenes/Mbappe.jpg");this.JugadoresMercado.add(mbappe);
         Jugador raphinha = new Jugador("Raphinha",1000000,"/com/mycompany/juego/imagenes/Raphinha.jpg");this.JugadoresMercado.add(raphinha);
         Jugador vini = new Jugador("Vinicius Jr",1000000,"/com/mycompany/juego/imagenes/Vini.jpg");this.JugadoresMercado.add(vini);
-        Jugador saka = new Jugador("Saka",1000000,"/com/mycompany/juego/imagenes/Yamal.jpg");this.JugadoresMercado.add(saka);
+        Jugador saka = new Jugador("Saka",1000000,"/com/mycompany/juego/imagenes/Saka.jpg");this.JugadoresMercado.add(saka);
         Jugador kvaratskhelia = new Jugador("Kvaratskhelia",1000000,"/com/mycompany/juego/imagenes/Kvaratskhelia.jpg");this.JugadoresMercado.add(kvaratskhelia);
         Jugador yamal = new Jugador("Lamine Yamal",1000000,"/com/mycompany/juego/imagenes/Yamal.jpg");this.JugadoresMercado.add(yamal);
         
