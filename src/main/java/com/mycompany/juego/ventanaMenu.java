@@ -87,9 +87,20 @@ public class ventanaMenu extends javax.swing.JFrame {
         equipo.setListo();
         
         if (equipo.isListo()){
-            ventanaLiga vL = new ventanaLiga(this);
-            this.setVisible(false);
-            vL.setVisible(true);
+            
+            if (equipo.isJugandoLiga()){
+                ventanaLiga vL = new ventanaLiga(this,equipo.getLiga());
+                this.setVisible(false);
+                vL.setVisible(true);
+            }
+            else{
+                Liga liga = new Liga(equipo);
+                equipo.setLiga(liga);
+                ventanaLiga vL = new ventanaLiga(this,equipo.getLiga());
+                this.setVisible(false);
+                vL.setVisible(true);
+            }
+            
         }
         else{
             JOptionPane.showMessageDialog(this, "Primero completa tu equipo");

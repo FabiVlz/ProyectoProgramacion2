@@ -34,6 +34,7 @@ public class Juego {
         
         Mercado merca = new Mercado();
         Equipo equipo = new Equipo(botones);
+        equipo.setNombre("JUGADOR");
         merca.cargarJugadores();
         ventanaInicio menu = new ventanaInicio(merca,equipo,botones);
         menu.setVisible(true);

@@ -15,13 +15,24 @@ public class Equipo {
     private String nombre;
     private boolean completo = false;
     private boolean listo = false;
+    private boolean jugandoLiga = false;
     protected int dinero = 50000000;
     private int media; 
+    private boolean bot;
     ArrayList<Jugador> jugadoresEquipo = new ArrayList <>();
     ArrayList<JButton> botones;
     Jugador jugadorSeleccionado = null;
     HashMap<String,Jugador> titulares = new HashMap<>();
+    Liga liga;
     
+    protected int goles;
+    protected int puntos;
+   
+    public Equipo(String nombre, int media, boolean bot){
+        this.nombre = nombre;
+        this.media = media;
+        this.bot = bot;
+    }
     public Equipo(ArrayList<JButton> botones) {
         this.botones = botones;
         titulares.put("PORTERO",null);
@@ -159,15 +170,43 @@ public class Equipo {
         return listo;
     }
     public int calcularMedia(){
-        int contador = 0;
-        for (String clave : titulares.keySet()){
-            if (titulares.get(clave) != null){
-                contador += titulares.get(clave).getMedia();
-            }
-            else{
-                contador += 0;
-            }
+        if (bot){
+            return media;
         }
-        return (contador/5);
+        else{
+            int contador = 0;
+            for (String clave : titulares.keySet()){
+                if (titulares.get(clave) != null){
+                    contador += titulares.get(clave).getMedia();
+                }
+                else{
+                    contador += 0;
+                }
+            }
+            return (contador/5);
+        }
+        
+    }
+    public boolean isJugandoLiga(){
+        return jugandoLiga;
+    }
+    public void setJugandoLiga(boolean jugandoLiga) {
+        this.jugandoLiga = jugandoLiga;
+    }
+    public void setLiga(Liga liga){
+        this.liga = liga;
+        setJugandoLiga(true);
+    }
+    public Liga getLiga(){
+        return liga;
+    }
+    public int getGoles() {
+        return goles;
+    }
+    public int getPuntos() {
+        return puntos;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }
