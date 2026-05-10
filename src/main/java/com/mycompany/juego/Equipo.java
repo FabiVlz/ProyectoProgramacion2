@@ -27,6 +27,7 @@ public class Equipo {
     
     protected int goles;
     protected int puntos;
+    protected int partidosJugados;
    
     public Equipo(String nombre, int media, boolean bot){
         this.nombre = nombre;
@@ -208,5 +209,8 @@ public class Equipo {
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    public int getPartidosJugados(){
+        return partidosJugados;
     }
 }

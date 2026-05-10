@@ -20,23 +20,34 @@ public class ventanaLiga extends javax.swing.JFrame {
      * @param liga
      */
     public ventanaLiga(ventanaMenu menu,Liga liga) {
+        this.menu = menu;
+        this.liga = liga;
         initComponents();
-        
+        actualizarTabla();
+        setLocationRelativeTo(null);
+    }
+    
+    final void actualizarTabla(){
         DefaultTableModel modelo = (DefaultTableModel) TablaPosiciones.getModel();
         modelo.setRowCount(0);
+        
+        liga.getEquiposJugando().sort((a,b) -> {
+            if (b.getPuntos() != a.getPuntos()){
+                return b.getPuntos() - a.getPuntos();
+            }
+            else {
+                return b.getGoles() - a.getGoles();
+            }});
         
         for(Equipo equipo : liga.getEquiposJugando()){
             modelo.addRow(new Object[]{
                 equipo.getNombre(),
                 equipo.getPuntos(),
-                equipo.getGoles()
+                equipo.getGoles(),
+                equipo.getPartidosJugados()
             });
         }
-        this.menu = menu;
-        this.liga = liga;
-        setLocationRelativeTo(null);
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -57,17 +68,17 @@ public class ventanaLiga extends javax.swing.JFrame {
         TablaPosiciones.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         TablaPosiciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Nombre", "Puntos", "Goles"
+                "Nombre", "Puntos", "Goles", "PartidosJugados"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -116,7 +127,8 @@ public class ventanaLiga extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void botonPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPartidoActionPerformed
-        liga.jugarPartido();
+        liga.jugarPartido(this);
+        actualizarTabla();
     }//GEN-LAST:event_botonPartidoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

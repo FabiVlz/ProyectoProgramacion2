@@ -5,27 +5,118 @@
 package com.mycompany.juego;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author yisus
  */
 public class Liga {
-    HashMap<String,Partido> partidosLiga = new HashMap<>();
-    ArrayList<Partido> totalPartidos = new ArrayList<>();
-    private int contadorPartidos = 0;
-    Equipo equipo;
     ArrayList<Equipo> equiposJugando = new ArrayList<>();
+    ArrayList<Equipo> equiposTotal = new ArrayList<>();
+    ArrayList<Partido> totalPartidos = new ArrayList<>();
+    
+    boolean temporadaTerminada;
+    Equipo equipo;
+    
     
     public Liga(Equipo equipo) {
         this.equipo = equipo;
-        partidosLiga.put("PARTIDO1",null);
-        partidosLiga.put("PARTIDO2",null);
-        partidosLiga.put("PARTIDO3",null);
-        partidosLiga.put("PARTIDO4",null);
-        partidosLiga.put("PARTIDO5",null);
+        equipo.setJugandoLiga(true);
+        
+        generarLiga();
+        
+    }
+    public void jugarPartido(ventanaLiga vL){
+
+        if (temporadaTerminada) {
+            generarLiga();
+            equipo.goles = 0;
+            equipo.puntos = 0;
+            temporadaTerminada = false;
+            vL.actualizarTabla();
+            return;
+        }
+
+        int partidosJugados = 0;
+        boolean jugadorYaJugo = false;
+
+        HashSet<String> usados = new HashSet<>();
+        ArrayList<Partido> jugados = new ArrayList<>();
+
+        Collections.shuffle(totalPartidos);
+
+        for (Partido partido : totalPartidos) {
+
+            if (partidosJugados == 3) break;
+
+            String local = partido.local.getNombre();
+            String visitante = partido.visitante.getNombre();
+
+            if (!usados.contains(local) && !usados.contains(visitante)) {
+
+                if (local.equals(equipo.getNombre()) || visitante.equals(equipo.getNombre())) {
+                    partido.jugarPartido(vL);
+                    jugadorYaJugo = true;
+                } 
+                else {
+                    partido.simularPartido();
+                }
+
+                usados.add(local);
+                usados.add(visitante);
+                jugados.add(partido);
+                partidosJugados++;
+            }
+        }
+        if (!jugadorYaJugo) {
+            for (Partido partido : totalPartidos) {
+                String local = partido.local.getNombre();
+                String visitante = partido.visitante.getNombre();
+
+                if (local.equals(equipo.getNombre()) || visitante.equals(equipo.getNombre())) {
+                    partido.jugarPartido(vL);
+                    jugados.add(partido);
+                    break;
+                }
+            }
+        }
+        totalPartidos.removeAll(jugados);
+
+
+        if (totalPartidos.size() <= 3 && !totalPartidos.isEmpty()) {
+
+            for (Partido partido : totalPartidos) {
+                String local = partido.local.getNombre();
+                String visitante = partido.visitante.getNombre();
+
+                if (local.equals(equipo.getNombre()) || visitante.equals(equipo.getNombre())) {
+                    partido.jugarPartido(vL);
+                } else {
+                    partido.simularPartido();
+                }
+            }
+
+            totalPartidos.clear(); 
+        }
+
+        if (totalPartidos.isEmpty()) {
+            temporadaTerminada = true;
+            JOptionPane.showMessageDialog(vL, "Temporada terminada");
+        }
+    }
+    
+    public ArrayList<Equipo> getEquiposJugando(){
+        return equiposJugando;
+    }
+    
+    private void generarLiga(){
+        totalPartidos.clear();
+        equiposJugando.clear();
+        equiposTotal.clear();
         
         Equipo barcelona = new Equipo("Barcelona",85,true);
         Equipo madrid = new Equipo("Real Madrid",85,true);
@@ -37,59 +128,34 @@ public class Liga {
         Equipo pumas = new Equipo("Pumas",70,true);
         Equipo tigres = new Equipo("Tigres",70,true);
         Equipo toluca = new Equipo("Toluca",71,true);
-
-        totalPartidos.add(new Partido(barcelona,equipo));
-        totalPartidos.add(new Partido(madrid,equipo));
-        totalPartidos.add(new Partido(psg,equipo));
-        totalPartidos.add(new Partido(city,equipo));
-        totalPartidos.add(new Partido(bayern,equipo));
-        totalPartidos.add(new Partido(america,equipo));
-        totalPartidos.add(new Partido(chivas,equipo));
-        totalPartidos.add(new Partido(pumas,equipo));
-        totalPartidos.add(new Partido(tigres,equipo));
-        totalPartidos.add(new Partido(toluca,equipo));
+        equiposTotal.add(barcelona);
+        equiposTotal.add(madrid);
+        equiposTotal.add(psg);
+        equiposTotal.add(bayern);
+        equiposTotal.add(city);
+        equiposTotal.add(america);
+        equiposTotal.add(chivas);
+        equiposTotal.add(pumas);
+        equiposTotal.add(tigres);
+        equiposTotal.add(toluca);
         
         Random random = new Random();
         for (int i = 1; i <= 5; i++){
-            int b = random.nextInt(totalPartidos.size());
-            Partido partido = totalPartidos.get(b);
-            for(String clave : partidosLiga.keySet()){
-                if(partidosLiga.get(clave) == null){
-                    partidosLiga.replace(clave, partido);
-                    equiposJugando.add(partido.bot);
-                    break;
-                }
-            }
-            totalPartidos.remove(b);
+            int b = random.nextInt(equiposTotal.size());
+            equiposJugando.add(equiposTotal.get(b));
+            equiposTotal.remove(b);
         }
         equiposJugando.add(equipo);
-    }
-    public void jugarPartido(){
-        if (contadorPartidos == 0){
-            (partidosLiga.get("PARTIDO1")).jugarPartido();
-            contadorPartidos ++;
+        
+        for (int i = 0; i < equiposJugando.size(); i++) {
+            for (int j = i + 1; j < equiposJugando.size(); j++) {
+                totalPartidos.add(new Partido(equiposJugando.get(i), equiposJugando.get(j)));
+            }
         }
-        else if (contadorPartidos == 1){
-            (partidosLiga.get("PARTIDO2")).jugarPartido();
-            contadorPartidos ++;
+        for (Equipo equipos : equiposJugando) {
+            equipos.goles = 0;
+            equipos.puntos = 0;
+            equipos.partidosJugados = 0;
         }
-        else if (contadorPartidos == 2){
-            (partidosLiga.get("PARTIDO3")).jugarPartido();
-            contadorPartidos ++;
-        }
-        else if (contadorPartidos == 3){
-            (partidosLiga.get("PARTIDO4")).jugarPartido();
-            contadorPartidos ++;
-        }
-        else if (contadorPartidos == 4){
-            (partidosLiga.get("PARTIDO5")).jugarPartido();
-            contadorPartidos = 0;
-        }
-    }
-    public HashMap<String,Partido> getPartidos(){
-        return partidosLiga;
-    }
-    public ArrayList<Equipo> getEquiposJugando(){
-        return equiposJugando;
     }
 }
