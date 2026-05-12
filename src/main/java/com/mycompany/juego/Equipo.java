@@ -16,7 +16,7 @@ public class Equipo {
     private boolean completo = false;
     private boolean listo = false;
     private boolean jugandoLiga = false;
-    protected int dinero = 5000000;
+    protected int dinero = 500000000;
     private int media; 
     private boolean bot;
     ArrayList<Jugador> jugadoresEquipo = new ArrayList <>();
