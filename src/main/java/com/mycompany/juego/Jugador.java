@@ -4,7 +4,7 @@ package com.mycompany.juego;
  *
  * @author Bilsox
  */
-public class Jugador{
+public class Jugador implements Transferible{
     private String nombre;
     private boolean comprado = false;
     private boolean titular = false;
@@ -27,6 +27,7 @@ public class Jugador{
         this.nombre = nombre;
     }
 
+    @Override
     public boolean isComprado() {
         return comprado;
     }
@@ -36,9 +37,11 @@ public class Jugador{
     public void setTitular(boolean titular) {
         this.titular = titular;
     }
+    @Override
     public void setComprado(boolean comprado) {
         this.comprado = comprado;
     }
+    @Override
     public int getPrecio() {
         return precio;
     }
