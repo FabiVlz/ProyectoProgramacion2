@@ -17,6 +17,7 @@ import javax.swing.JButton;
 public class ventanaPlantilla extends javax.swing.JFrame {
     Equipo equipo;
     ventanaMenu menu;
+    SistemaFacade fachada;
    
     /**
      * Creates new form ventanaPlantilla
@@ -28,6 +29,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         initComponents();
         this.equipo = equipo;
         this.menu = menu;
+        this.fachada = new SistemaFacade(equipo);
         
         textoMedia.setText(String.valueOf(equipo.calcularMedia()));
         for ( String clave : equipo.titulares.keySet()){
@@ -214,27 +216,27 @@ public class ventanaPlantilla extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void delantero1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delantero1MouseClicked
-        equipo.ponerTitular("DELANTERO1",delantero1,this,textoMedia);
+        fachada.ponerTitular("DELANTERO1",delantero1,this,textoMedia);
     }//GEN-LAST:event_delantero1MouseClicked
 
     private void delantero2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delantero2MouseClicked
-        equipo.ponerTitular("DELANTERO2",delantero2,this,textoMedia);
+        fachada.ponerTitular("DELANTERO2",delantero2,this,textoMedia);
     }//GEN-LAST:event_delantero2MouseClicked
 
     private void defensa1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_defensa1MouseClicked
-        equipo.ponerTitular("DEFENSA1",defensa1,this,textoMedia);
+        fachada.ponerTitular("DEFENSA1",defensa1,this,textoMedia);
     }//GEN-LAST:event_defensa1MouseClicked
 
     private void defensa2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_defensa2MouseClicked
-        equipo.ponerTitular("DEFENSA2",defensa2,this,textoMedia);
+        fachada.ponerTitular("DEFENSA2",defensa2,this,textoMedia);
     }//GEN-LAST:event_defensa2MouseClicked
 
     private void porteroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_porteroMouseClicked
-        equipo.ponerTitular("PORTERO",portero,this,textoMedia);
+        fachada.ponerTitular("PORTERO",portero,this,textoMedia);
     }//GEN-LAST:event_porteroMouseClicked
 
     private void botonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVenderActionPerformed
-        equipo.venderJugador(this);
+        fachada.venderJugador(this);
     }//GEN-LAST:event_botonVenderActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

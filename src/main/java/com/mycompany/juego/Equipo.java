@@ -16,7 +16,7 @@ public class Equipo {
     private boolean completo = false;
     private boolean listo = false;
     private boolean jugandoLiga = false;
-    protected int dinero = 50000000;
+    protected int dinero = 5000000;
     private int media; 
     private boolean bot;
     ArrayList<Jugador> jugadoresEquipo = new ArrayList <>();
@@ -104,12 +104,9 @@ public class Equipo {
 
                 } else {
 
-                    JOptionPane.showMessageDialog(
-                        mercado,
+                    throw new DineroInsuficienteException(
                         "Dinero insuficiente"
                     );
-
-                    return String.valueOf(dinero);
                 }
             }
 
@@ -123,7 +120,7 @@ public class Equipo {
             return String.valueOf(dinero);
         }
 
-    } catch (Exception e){
+    } catch (DineroInsuficienteException e){
 
         JOptionPane.showMessageDialog(
             mercado,

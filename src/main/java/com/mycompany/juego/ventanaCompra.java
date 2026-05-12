@@ -18,6 +18,7 @@ public class ventanaCompra extends javax.swing.JFrame {
     JTextField texto;
     JButton boton;
     JPanel panel;
+    SistemaFacade fachada;
     /**
      * Creates new form ventanaCompra
      * @param mercado
@@ -31,6 +32,7 @@ public class ventanaCompra extends javax.swing.JFrame {
         initComponents();
         this.mercado = mercado;
         this.equipo = equipo;
+        this.fachada = new SistemaFacade(equipo);
         this.jugador = j;
         this.texto = texto;
         this.boton = boton;
@@ -96,7 +98,7 @@ public class ventanaCompra extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        texto.setText(equipo.agregarJugadores(jugador,mercado,boton,panel));
+        texto.setText(fachada.comprarJugador(jugador,mercado,boton,panel));
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
