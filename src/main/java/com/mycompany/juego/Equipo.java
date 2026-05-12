@@ -44,43 +44,95 @@ public class Equipo {
     }
     
     public String agregarJugadores(Jugador j, ventanaMercado mercado,JButton boton,JPanel panel){
+
+    try {
+
         if (!isCompleto()){
+
             if (j.isComprado()){
-                JOptionPane.showMessageDialog(mercado, j.getNombre() + " no esta disponible");
+
+                JOptionPane.showMessageDialog(
+                    mercado,
+                    j.getNombre() + " no esta disponible"
+                );
+
                 return String.valueOf(dinero);
+
             } else {
+
                 if (dinero >= j.getPrecio()){
+
                     this.jugadoresEquipo.add(j);
+
                     j.setComprado(true);
+
                     dinero -= j.getPrecio();
+
                     boton.setIcon(null);
+
                     boton.setText("COMPRADO");
-                    
+
                     for(JButton b : botones){
+
                         if (b.getIcon() == null){
-                            b.setIcon(new ImageIcon(getClass().getResource(j.getImagen())));
+
+                            b.setIcon(
+                                new ImageIcon(
+                                    getClass().getResource(j.getImagen())
+                                )
+                            );
+
                             b.putClientProperty("jugador",j);
-                            b.addActionListener(e -> {this.jugadorSeleccionado = j;});
+
+                            b.addActionListener(e -> {
+                                this.jugadorSeleccionado = j;
+                            });
+
                             b.setText("");
+
                             b.revalidate();
+
                             b.repaint();
+
                             break;
                         }
                     }
+
                     setCompleto();
+
                     return String.valueOf(dinero);
-                }
-                else{
-                    JOptionPane.showMessageDialog(mercado, "Dinero insuficiente");
+
+                } else {
+
+                    JOptionPane.showMessageDialog(
+                        mercado,
+                        "Dinero insuficiente"
+                    );
+
                     return String.valueOf(dinero);
                 }
             }
-        }
-        else{
-            JOptionPane.showMessageDialog(mercado, "Tu equipo ya esta completo");
+
+        } else {
+
+            JOptionPane.showMessageDialog(
+                mercado,
+                "Tu equipo ya esta completo"
+            );
+
             return String.valueOf(dinero);
-        }   
+        }
+
+    } catch (Exception e){
+
+        JOptionPane.showMessageDialog(
+            mercado,
+            "Ocurrio un error: " + e.getMessage()
+        );
+
+        return String.valueOf(dinero);
     }
+}
     public boolean isCompleto(){
         return completo;
     }
