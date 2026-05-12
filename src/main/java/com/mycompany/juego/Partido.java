@@ -26,7 +26,7 @@ public class Partido {
         int mediaJugador = local.calcularMedia();
         int mediaBot = visitante.calcularMedia();
 
-        double probJugador = (double) mediaJugador / (mediaJugador + 2*mediaBot);
+        double probJugador = (double) mediaJugador / (mediaJugador + 1.25*mediaBot);
         double r = Math.random();
 
         Random rand = new Random();
@@ -53,7 +53,7 @@ public class Partido {
         int mediaJugador = local.calcularMedia();
         int mediaBot = visitante.calcularMedia();
 
-        double probabilidad = (double) mediaJugador / (mediaJugador + 2*mediaBot);
+        double probabilidad = (double) mediaJugador / (mediaJugador + 1.25*mediaBot);
         double r = Math.random();
 
         Random rand = new Random();

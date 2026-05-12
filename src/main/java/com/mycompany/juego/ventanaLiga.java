@@ -80,12 +80,27 @@ public class ventanaLiga extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
+        TablaPosiciones.setDropMode(javax.swing.DropMode.INSERT);
+        TablaPosiciones.setRowSelectionAllowed(false);
         jScrollPane1.setViewportView(TablaPosiciones);
+        if (TablaPosiciones.getColumnModel().getColumnCount() > 0) {
+            TablaPosiciones.getColumnModel().getColumn(0).setResizable(false);
+            TablaPosiciones.getColumnModel().getColumn(1).setResizable(false);
+            TablaPosiciones.getColumnModel().getColumn(2).setResizable(false);
+            TablaPosiciones.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         botonPartido.setBackground(new java.awt.Color(51, 51, 51));
         botonPartido.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
