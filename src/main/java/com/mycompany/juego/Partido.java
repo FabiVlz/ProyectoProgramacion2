@@ -26,52 +26,58 @@ public class Partido {
         int mediaJugador = local.calcularMedia();
         int mediaBot = visitante.calcularMedia();
 
-        double probJugador = (double) mediaJugador / (mediaJugador + 1.25*mediaBot);
+        double probJugador = (double) mediaJugador / (mediaJugador + mediaBot);
         double r = Math.random();
 
         Random rand = new Random();
 
         if (r < probJugador) {
-            golesLocal = rand.nextInt(rand.nextInt(6)+1) + 1;
+            golesLocal = rand.nextInt(6) + 1;
             golesVisitante = rand.nextInt(golesLocal);
 
             local.puntos += 3;
         } else {
-            golesVisitante = rand.nextInt(rand.nextInt(6)+1) + 1;
+            golesVisitante = rand.nextInt(6) + 1;
             golesLocal = rand.nextInt(golesVisitante);
 
             visitante.puntos += 3;
         }
         local.partidosJugados += 1;
-        visitante.partidosJugados += 1;
         local.goles += golesLocal;
+        local.golesEnContra += golesVisitante;
+        
+        visitante.partidosJugados += 1;
         visitante.goles += golesVisitante;
-
+        visitante.golesEnContra += golesLocal;
+        
         JOptionPane.showMessageDialog(vL, "El partido termino: " + local.getNombre() + golesLocal + "-" + golesVisitante + visitante.getNombre() );
     }
     public void simularPartido(){
         int mediaJugador = local.calcularMedia();
         int mediaBot = visitante.calcularMedia();
 
-        double probabilidad = (double) mediaJugador / (mediaJugador + 1.25*mediaBot);
+        double probabilidad = (double) mediaJugador / (mediaJugador + mediaBot);
         double r = Math.random();
 
         Random rand = new Random();
 
         if (r < probabilidad) {
-            golesLocal = rand.nextInt(rand.nextInt(6)+1) + 1;
+            golesLocal = rand.nextInt(6) + 1;
             golesVisitante = rand.nextInt(golesLocal);
 
             local.puntos += 3;
         } else {
-            golesVisitante = rand.nextInt(rand.nextInt(6)+1) + 1;
+            golesVisitante = rand.nextInt(6) + 1;
             golesLocal = rand.nextInt(golesVisitante);
 
             visitante.puntos += 3;
         }
         local.partidosJugados += 1;
-        visitante.partidosJugados += 1;
         local.goles += golesLocal;
+        local.golesEnContra += golesVisitante;
+        
+        visitante.partidosJugados += 1;
         visitante.goles += golesVisitante;
+        visitante.golesEnContra += golesLocal;
     }
 }

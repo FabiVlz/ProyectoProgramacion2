@@ -96,6 +96,7 @@ public class ventanaQuitarTitular extends javax.swing.JFrame {
     private void botonQuitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonQuitarActionPerformed
         
         if (titulares.get(posicion) != null) {
+            titulares.get(posicion).setLugar(null);
             titulares.get(posicion).setTitular(false);
             titulares.replace(posicion, null);
             jugadorTitular.setIcon(null);

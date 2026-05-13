@@ -33,8 +33,13 @@ public class Liga {
     public void jugarPartido(ventanaLiga vL){
 
         if (temporadaTerminada) {
+            if (equiposJugando.get(0) == equipo){
+                equipo.dinero += equipo.goles*500000;
+                JOptionPane.showMessageDialog(vL, "Ganaste la liga y recibiste: " + equipo.goles*500000);
+            }
             generarLiga();
             equipo.goles = 0;
+            equipo.golesEnContra = 0;
             equipo.puntos = 0;
             temporadaTerminada = false;
             vL.actualizarTabla();

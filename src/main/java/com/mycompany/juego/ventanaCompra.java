@@ -37,6 +37,8 @@ public class ventanaCompra extends javax.swing.JFrame {
         this.texto = texto;
         this.boton = boton;
         this.panel = panel;
+        botonComprar.setText(String.valueOf(j.getPrecio()));
+        textoCompra.setText("Quieres comprar a " + j.getNombre() + "?");
         setLocationRelativeTo(this.mercado);
     }
     /**
@@ -48,26 +50,28 @@ public class ventanaCompra extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        textoCompra = new javax.swing.JLabel();
+        botonComprar = new javax.swing.JButton();
+        botonNOComprar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setUndecorated(true);
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("URW Gothic", 0, 24)); // NOI18N
-        jLabel1.setText("QUIERES COMPRAR ESTE JUGADOR?");
+        textoCompra.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        textoCompra.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textoCompra.setToolTipText("");
 
-        jButton1.setBackground(new java.awt.Color(0, 255, 0));
-        jButton1.setText("SI");
-        jButton1.setFocusable(false);
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        botonComprar.setBackground(new java.awt.Color(0, 255, 0));
+        botonComprar.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        botonComprar.setText("SI");
+        botonComprar.setFocusable(false);
+        botonComprar.addActionListener(this::botonComprarActionPerformed);
 
-        jButton2.setBackground(new java.awt.Color(255, 0, 51));
-        jButton2.setText("NO");
-        jButton2.setFocusable(false);
-        jButton2.addActionListener(this::jButton2ActionPerformed);
+        botonNOComprar.setBackground(new java.awt.Color(255, 0, 51));
+        botonNOComprar.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        botonNOComprar.setText("NO");
+        botonNOComprar.setFocusable(false);
+        botonNOComprar.addActionListener(this::botonNOComprarActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,40 +79,38 @@ public class ventanaCompra extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(botonComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(botonNOComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(102, Short.MAX_VALUE))
+            .addComponent(textoCompra, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(botonComprar, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                    .addComponent(botonNOComprar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 19, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botonComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonComprarActionPerformed
         texto.setText(fachada.comprarJugador(jugador,mercado,boton,panel));
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonComprarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void botonNOComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNOComprarActionPerformed
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_botonNOComprarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton botonComprar;
+    private javax.swing.JButton botonNOComprar;
+    private javax.swing.JLabel textoCompra;
     // End of variables declaration//GEN-END:variables
 }

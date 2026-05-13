@@ -17,6 +17,7 @@ import javax.swing.JButton;
 public class ventanaPlantilla extends javax.swing.JFrame {
     Equipo equipo;
     ventanaMenu menu;
+    ArrayList<JButton> botones;
     SistemaFacade fachada;
    
     /**
@@ -29,6 +30,8 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         initComponents();
         this.equipo = equipo;
         this.menu = menu;
+        this.botones = botones;
+        
         this.fachada = new SistemaFacade(equipo);
         
         textoMedia.setText(String.valueOf(equipo.calcularMedia()));
@@ -76,11 +79,8 @@ public class ventanaPlantilla extends javax.swing.JFrame {
             
         }
         
-        for (JButton b: botones){
-            panelJugadoresP.add(b);
-            panelJugadoresP.revalidate();
-            panelJugadoresP.repaint();
-        }
+        actualizarPanelJugadores();
+        
         jScrollPane1.getVerticalScrollBar().setUnitIncrement(20);
         panelJugadoresP.setPreferredSize(new Dimension(330,1600));
         setLocationRelativeTo(null);
@@ -100,7 +100,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         portero = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         panelJugadoresP = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        botonRegresar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         delantero1 = new javax.swing.JLabel();
         delantero2 = new javax.swing.JLabel();
@@ -134,12 +134,12 @@ public class ventanaPlantilla extends javax.swing.JFrame {
 
         panelPlantilla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 330, 650));
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jButton1.setText("Regresar");
-        jButton1.setFocusPainted(false);
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-        panelPlantilla.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        botonRegresar.setBackground(new java.awt.Color(102, 102, 102));
+        botonRegresar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        botonRegresar.setText("Regresar");
+        botonRegresar.setFocusPainted(false);
+        botonRegresar.addActionListener(this::botonRegresarActionPerformed);
+        panelPlantilla.add(botonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -210,10 +210,10 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
+    private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
+        this.dispose();
         menu.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonRegresarActionPerformed
 
     private void delantero1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delantero1MouseClicked
         fachada.ponerTitular("DELANTERO1",delantero1,this,textoMedia);
@@ -237,15 +237,32 @@ public class ventanaPlantilla extends javax.swing.JFrame {
 
     private void botonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVenderActionPerformed
         fachada.venderJugador(this);
+        actualizarPanelJugadores();
     }//GEN-LAST:event_botonVenderActionPerformed
+    public final void actualizarPanelJugadores() {
 
+        botones.sort((a, b) -> {
+            boolean aVacio = a.getIcon() == null;
+            boolean bVacio = b.getIcon() == null;
+            return Boolean.compare(aVacio, bVacio);
+        });
+
+        panelJugadoresP.removeAll();
+
+        for (JButton b : botones) {
+            panelJugadoresP.add(b);
+        }
+
+        panelJugadoresP.revalidate();
+        panelJugadoresP.repaint();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonRegresar;
     private javax.swing.JButton botonVender;
     private javax.swing.JLabel defensa1;
     private javax.swing.JLabel defensa2;
     private javax.swing.JLabel delantero1;
     private javax.swing.JLabel delantero2;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panelJugadoresP;

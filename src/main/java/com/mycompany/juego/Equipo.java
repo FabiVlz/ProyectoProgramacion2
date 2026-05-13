@@ -24,7 +24,7 @@ public class Equipo {
     Jugador jugadorSeleccionado = null;
     HashMap<String,Jugador> titulares = new HashMap<>();
     Liga liga;
-    
+    protected int golesEnContra;
     protected int goles;
     protected int puntos;
     protected int partidosJugados;
@@ -93,7 +93,7 @@ public class Equipo {
                             b.revalidate();
 
                             b.repaint();
-
+                            
                             break;
                         }
                     }
@@ -158,6 +158,8 @@ public class Equipo {
             }
             else{
                 if (jugadorTitular.getIcon() == null){
+                    jugadorSeleccionado.setLugar(posicion);
+                    
                     titulares.replace(posicion,jugadorSeleccionado);
                     jugadorTitular.setIcon(new ImageIcon(getClass().getResource(jugadorSeleccionado.getImagen())));
                     jugadorSeleccionado.setTitular(true);
@@ -261,5 +263,11 @@ public class Equipo {
     }
     public int getPartidosJugados(){
         return partidosJugados;
+    }
+    public int getGolesEnContra(){
+        return golesEnContra;
+    }
+    public int getDG(){
+        return (goles-golesEnContra);
     }
 }

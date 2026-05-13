@@ -28,6 +28,7 @@ public class ventanaLiga extends javax.swing.JFrame {
     }
     
     final void actualizarTabla(){
+        TablaPosiciones.getTableHeader().setReorderingAllowed(false);
         DefaultTableModel modelo = (DefaultTableModel) TablaPosiciones.getModel();
         modelo.setRowCount(0);
         
@@ -36,7 +37,7 @@ public class ventanaLiga extends javax.swing.JFrame {
                 return b.getPuntos() - a.getPuntos();
             }
             else {
-                return b.getGoles() - a.getGoles();
+                return b.getDG() - a.getDG();
             }});
         
         for(Equipo equipo : liga.getEquiposJugando()){
@@ -44,6 +45,8 @@ public class ventanaLiga extends javax.swing.JFrame {
                 equipo.getNombre(),
                 equipo.getPuntos(),
                 equipo.getGoles(),
+                equipo.getGolesEnContra(),
+                equipo.getDG(),
                 equipo.getPartidosJugados()
             });
         }
@@ -52,36 +55,36 @@ public class ventanaLiga extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        botonRegresar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaPosiciones = new javax.swing.JTable();
         botonPartido = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jButton1.setText("Regresar");
-        jButton1.setFocusPainted(false);
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        botonRegresar.setBackground(new java.awt.Color(102, 102, 102));
+        botonRegresar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        botonRegresar.setText("Regresar");
+        botonRegresar.setFocusPainted(false);
+        botonRegresar.addActionListener(this::botonRegresarActionPerformed);
 
         TablaPosiciones.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         TablaPosiciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "Puntos", "Goles", "PartidosJugados"
+                "Nombre", "Puntos", "Goles", "GC", "DG", "PJ"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -93,6 +96,7 @@ public class ventanaLiga extends javax.swing.JFrame {
             }
         });
         TablaPosiciones.setDropMode(javax.swing.DropMode.INSERT);
+        TablaPosiciones.setFocusable(false);
         TablaPosiciones.setRowSelectionAllowed(false);
         jScrollPane1.setViewportView(TablaPosiciones);
         if (TablaPosiciones.getColumnModel().getColumnCount() > 0) {
@@ -100,6 +104,8 @@ public class ventanaLiga extends javax.swing.JFrame {
             TablaPosiciones.getColumnModel().getColumn(1).setResizable(false);
             TablaPosiciones.getColumnModel().getColumn(2).setResizable(false);
             TablaPosiciones.getColumnModel().getColumn(3).setResizable(false);
+            TablaPosiciones.getColumnModel().getColumn(4).setResizable(false);
+            TablaPosiciones.getColumnModel().getColumn(5).setResizable(false);
         }
 
         botonPartido.setBackground(new java.awt.Color(51, 51, 51));
@@ -113,7 +119,7 @@ public class ventanaLiga extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jButton1)
+                .addComponent(botonRegresar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botonPartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -123,7 +129,7 @@ public class ventanaLiga extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jButton1)
+                .addComponent(botonRegresar)
                 .addGap(0, 611, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
@@ -136,10 +142,10 @@ public class ventanaLiga extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
+    private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
+        this.dispose();
         menu.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonRegresarActionPerformed
 
     private void botonPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPartidoActionPerformed
         liga.jugarPartido(this);
@@ -149,7 +155,7 @@ public class ventanaLiga extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TablaPosiciones;
     private javax.swing.JButton botonPartido;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton botonRegresar;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -16,6 +16,7 @@ public class ventanaMercado extends javax.swing.JFrame {
     Mercado merca;
     ventanaMenu menu;
     Equipo equipo;
+    ventanaCompra vC = null;
     /**
      * Creates new form ventanaMercado
      * @param merca
@@ -45,10 +46,24 @@ public class ventanaMercado extends javax.swing.JFrame {
             boton.setContentAreaFilled(false);
             boton.setFocusPainted(false);
             boton.addActionListener(e -> {
-                ventanaCompra vC = new ventanaCompra(this,equipo,j,textoDinero,boton,panelJugadores);
-                vC.setVisible(true);
+                
+                if (vC == null || !vC.isDisplayable()) {
+
+                    vC = new ventanaCompra(this, equipo, j, textoDinero, boton, panelJugadores);
+                    vC.addWindowListener(new java.awt.event.WindowAdapter() {
+                        @Override
+                        public void windowClosed(java.awt.event.WindowEvent e) {
+                            vC = null;
+                        }
+                    });
+                    vC.setVisible(true);
+                } 
+                else {
+                    vC.toFront();
+                }
             });
         }
+        
         int filas = (int) Math.ceil((double)(this.merca.JugadoresMercado.size())/5);
         panelJugadores.setPreferredSize(new Dimension(800, filas * 200));
         panelJugadores.revalidate();
@@ -63,7 +78,7 @@ public class ventanaMercado extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         panelJugadores = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        botonRegresar = new javax.swing.JButton();
         textoDinero = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,13 +92,15 @@ public class ventanaMercado extends javax.swing.JFrame {
         panelJugadores.setLayout(new java.awt.GridLayout(0, 5));
         jScrollPane2.setViewportView(panelJugadores);
 
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        jButton1.setText("Regresar");
-        jButton1.setFocusPainted(false);
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        botonRegresar.setBackground(new java.awt.Color(102, 102, 102));
+        botonRegresar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        botonRegresar.setText("Regresar");
+        botonRegresar.setFocusPainted(false);
+        botonRegresar.addActionListener(this::botonRegresarActionPerformed);
 
+        textoDinero.setEditable(false);
         textoDinero.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        textoDinero.setFocusable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -92,7 +109,7 @@ public class ventanaMercado extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(botonRegresar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(textoDinero, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -104,7 +121,7 @@ public class ventanaMercado extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(botonRegresar, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(textoDinero))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -116,13 +133,13 @@ public class ventanaMercado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
+    private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
+        this.dispose();
         menu.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonRegresarActionPerformed
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton botonRegresar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel panelJugadores;
