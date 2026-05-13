@@ -11,6 +11,7 @@ public class Mercado {
         /*
         Porteros
         */
+        Jugador isaias = new Jugador("Isaias",1500000,"/com/mycompany/juego/imagenes/Isaias.jpg",67,"PORTERO");this.JugadoresMercado.add(isaias);
         Jugador neuer = new Jugador("Neuer",1500000,"/com/mycompany/juego/imagenes/Neuer.jpg",84,"PORTERO");this.JugadoresMercado.add(neuer);
         Jugador courtois = new Jugador("Courtois",2000000,"/com/mycompany/juego/imagenes/Courtois.jpg",89,"PORTERO");this.JugadoresMercado.add(courtois);
         Jugador alisson = new Jugador("Alisson",1000000,"/com/mycompany/juego/imagenes/Alisson.jpg",89,"PORTERO");this.JugadoresMercado.add(alisson);
@@ -46,6 +47,8 @@ public class Mercado {
         /*
         Delanteros
         */
+        Jugador mike = new Jugador("Mike",100000,"/com/mycompany/juego/imagenes/Mike.jpg",67,"DELANTERO");this.JugadoresMercado.add(mike);
+        Jugador monje = new Jugador("Monje",100000,"/com/mycompany/juego/imagenes/Christian.jpg",67,"DELANTERO");this.JugadoresMercado.add(monje);
         Jugador messi = new Jugador("Messi",1000000,"/com/mycompany/juego/imagenes/Messi.jpg",86,"DELANTERO");this.JugadoresMercado.add(messi);
         Jugador son = new Jugador("Son",1000000,"/com/mycompany/juego/imagenes/Son.jpg",85,"DELANTERO");this.JugadoresMercado.add(son);
         Jugador kane = new Jugador("Harry Kane",1000000,"/com/mycompany/juego/imagenes/Kane.jpg",89,"DELANTERO");this.JugadoresMercado.add(kane);
