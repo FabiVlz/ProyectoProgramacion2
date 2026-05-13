@@ -29,6 +29,7 @@ public class Mercado {
         Jugador saliba = new Jugador("Saliba",1350000,"/com/mycompany/juego/imagenes/Saliba.jpg",87,"DEFENSA");this.JugadoresMercado.add(saliba);
         Jugador nuno = new Jugador("Nuno Mendes",1300000,"/com/mycompany/juego/imagenes/Nuno.jpg",86,"DEFENSA");this.JugadoresMercado.add(nuno);
         Jugador pacho = new Jugador("Pacho",1500000,"/com/mycompany/juego/imagenes/Pacho.jpg",86,"DEFENSA");this.JugadoresMercado.add(pacho);
+        Jugador norza = new Jugador("Norza",3000000,"/com/mycompany/juego/imagenes/Norza.png",99,"DEFENSA"); this.JugadoresMercado.add(norza);
         /*
         Mediocampistas
         */
