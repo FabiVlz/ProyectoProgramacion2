@@ -50,7 +50,7 @@ public class Partido {
         visitante.goles += golesVisitante;
         visitante.golesEnContra += golesLocal;
         
-        JOptionPane.showMessageDialog(vL, "El partido termino: " + local.getNombre() + golesLocal + "-" + golesVisitante + visitante.getNombre() );
+        JOptionPane.showMessageDialog(vL, "El partido termino: \n" + local.getNombre() + " " + golesLocal + "-" + golesVisitante + " " + visitante.getNombre() );
     }
     public void simularPartido(){
         int mediaJugador = local.calcularMedia();

@@ -107,6 +107,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         botonVender = new javax.swing.JButton();
         delantero2 = new javax.swing.JLabel();
         botonRegresar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -196,6 +197,9 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         botonRegresar.addActionListener(this::botonRegresarActionPerformed);
         panelPlantilla.add(botonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/juego/imagenes/Plantilla.jpeg"))); // NOI18N
+        panelPlantilla.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 650));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -263,6 +267,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
     private javax.swing.JLabel defensa2;
     private javax.swing.JLabel delantero1;
     private javax.swing.JLabel delantero2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panelJugadoresP;
