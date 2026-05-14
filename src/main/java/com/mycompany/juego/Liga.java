@@ -34,8 +34,8 @@ public class Liga {
 
         if (temporadaTerminada) {
             if (equiposJugando.get(0) == equipo){
-                equipo.dinero += equipo.goles*500000;
-                JOptionPane.showMessageDialog(vL, "Ganaste la liga y recibiste: " + equipo.goles*500000);
+                equipo.dinero += ((equipo.goles*50000)  + 200000);
+                JOptionPane.showMessageDialog(vL, "Ganaste la liga y recibiste: " + ((equipo.goles*50000)  + 200000));
             }
             else{
                 equipo.dinero += equipo.goles*50000;

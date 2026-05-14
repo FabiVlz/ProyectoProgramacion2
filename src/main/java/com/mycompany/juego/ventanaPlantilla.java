@@ -173,7 +173,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 defensa2MouseClicked(evt);
             }
         });
-        panelPlantilla.add(defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 160, 199));
+        panelPlantilla.add(defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 160, 199));
 
         botonVender.setBackground(new java.awt.Color(204, 0, 0));
         botonVender.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -188,7 +188,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 delantero2MouseClicked(evt);
             }
         });
-        panelPlantilla.add(delantero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 160, 199));
+        panelPlantilla.add(delantero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 160, 199));
 
         botonRegresar.setBackground(new java.awt.Color(102, 102, 102));
         botonRegresar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
