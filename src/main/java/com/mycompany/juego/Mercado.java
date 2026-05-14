@@ -20,7 +20,6 @@ public class Mercado {
         /*
         Defensas
         */
-<<<<<<< HEAD
         Jugador fabian = new Jugador("Fabian",0,"/com/mycompany/juego/imagenes/Fabian.jpg",67,"DEFENSA");this.JugadoresMercado.add(fabian);
         Jugador vanDijk = new Jugador("van Dijk",2800000,"/com/mycompany/juego/imagenes/van Dijk.jpg",90,"DEFENSA");this.JugadoresMercado.add(vanDijk);
         Jugador carvajal = new Jugador("Carvajal",1200000,"/com/mycompany/juego/imagenes/Carvajal.jpg",85,"DEFENSA");this.JugadoresMercado.add(carvajal);
@@ -48,9 +47,6 @@ public class Mercado {
         Jugador vitinha = new Jugador("Vitinha",2300000,"/com/mycompany/juego/imagenes/Vitinha.jpg",89,"MEDIO");this.JugadoresMercado.add(vitinha);
         Jugador wirtz = new Jugador("Wirtz",2300000,"/com/mycompany/juego/imagenes/Wirtz.jpg",89,"MEDIO");this.JugadoresMercado.add(wirtz);
         Jugador musiala = new Jugador("Musiala",1900000,"/com/mycompany/juego/imagenes/Musiala.jpg",88,"MEDIO");this.JugadoresMercado.add(musiala);
-=======
-        
->>>>>>> 877cdb942ba0ad876c945a501989ba02c9b8e15f
         /*
         Delanteros
         */
