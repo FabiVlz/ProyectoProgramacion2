@@ -35,8 +35,8 @@ public class Mercado {
         /*
         Mediocampistas
         */
-        Jugador marvin = new Jugador("Marvin",1000000,"/com/mycompany/juego/imagenes/Marvin.jpg",87,"MEDIO");this.JugadoresMercado.add(marvin);
-        Jugador braulio = new Jugador("Braulio",1000000,"/com/mycompany/juego/imagenes/Braulio.jpg",87,"MEDIO");this.JugadoresMercado.add(braulio);
+        Jugador marvin = new Jugador("Marvin",1000000,"/com/mycompany/juego/imagenes/Marvin.jpg",67,"MEDIO");this.JugadoresMercado.add(marvin);
+        Jugador braulio = new Jugador("Braulio",1000000,"/com/mycompany/juego/imagenes/Braulio.jpg",67,"MEDIO");this.JugadoresMercado.add(braulio);
         Jugador deBruyne = new Jugador("DeBruyne",1000000,"/com/mycompany/juego/imagenes/deBruyne.jpg",87,"MEDIO");this.JugadoresMercado.add(deBruyne);
         Jugador calhanoglu = new Jugador("Calhanoglu",1000000,"/com/mycompany/juego/imagenes/Calhanoglu.jpg",86,"MEDIO");this.JugadoresMercado.add(calhanoglu);
         Jugador kimmich = new Jugador("Kimmich",1000000,"/com/mycompany/juego/imagenes/Kimmich.jpg",89,"MEDIO");this.JugadoresMercado.add(kimmich);
@@ -53,6 +53,7 @@ public class Mercado {
         Jugador mike = new Jugador("Mike",100000,"/com/mycompany/juego/imagenes/Mike.jpg",67,"DELANTERO");this.JugadoresMercado.add(mike);
         Jugador monje = new Jugador("Monje",100000,"/com/mycompany/juego/imagenes/Christian.jpg",67,"DELANTERO");this.JugadoresMercado.add(monje);
         Jugador messi = new Jugador("Messi",1000000,"/com/mycompany/juego/imagenes/Messi.jpg",86,"DELANTERO");this.JugadoresMercado.add(messi);
+        Jugador ronaldo = new Jugador("La Bichota",1000000,"/com/mycompany/juego/imagenes/Cristiano Ronaldo.jpg",86,"DELANTERO");this.JugadoresMercado.add(ronaldo);
         Jugador son = new Jugador("Son",1000000,"/com/mycompany/juego/imagenes/Son.jpg",85,"DELANTERO");this.JugadoresMercado.add(son);
         Jugador kane = new Jugador("Harry Kane",1000000,"/com/mycompany/juego/imagenes/Kane.jpg",89,"DELANTERO");this.JugadoresMercado.add(kane);
         Jugador salah = new Jugador("Salah",1000000,"/com/mycompany/juego/imagenes/Salah.jpg",91,"DELANTERO");this.JugadoresMercado.add(salah);
