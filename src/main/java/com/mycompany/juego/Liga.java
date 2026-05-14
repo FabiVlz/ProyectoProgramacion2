@@ -37,6 +37,10 @@ public class Liga {
                 equipo.dinero += equipo.goles*500000;
                 JOptionPane.showMessageDialog(vL, "Ganaste la liga y recibiste: " + equipo.goles*500000);
             }
+            else{
+                equipo.dinero += equipo.goles*50000;
+                JOptionPane.showMessageDialog(vL, "No ganaste la liga y recibiste: " + equipo.goles*50000);
+            }
             generarLiga();
             equipo.goles = 0;
             equipo.golesEnContra = 0;
