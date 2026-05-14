@@ -55,24 +55,35 @@ public class ventanaMenu extends javax.swing.JFrame {
 
         BotonLiga.setBackground(new java.awt.Color(102, 102, 102));
         BotonLiga.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        BotonLiga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/juego/imagenes/LigaMx.jpg"))); // NOI18N
+        BotonLiga.setForeground(new java.awt.Color(255, 255, 51));
+        BotonLiga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/juego/imagenes/Bayernliga.jpg"))); // NOI18N
+        BotonLiga.setText("LIGA");
         BotonLiga.setToolTipText("");
         BotonLiga.setFocusPainted(false);
+        BotonLiga.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         BotonLiga.setMinimumSize(new java.awt.Dimension(79, 39));
         BotonLiga.addActionListener(this::BotonLigaActionPerformed);
         jPanel1.add(BotonLiga, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 390, 250));
 
-        BotonMercado.setBackground(new java.awt.Color(102, 102, 102));
         BotonMercado.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        BotonMercado.setForeground(new java.awt.Color(255, 255, 0));
         BotonMercado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/juego/imagenes/mercado.jpeg"))); // NOI18N
+        BotonMercado.setText("MERCADO");
         BotonMercado.setFocusPainted(false);
+        BotonMercado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BotonMercado.setOpaque(true);
         BotonMercado.addActionListener(this::BotonMercadoActionPerformed);
         jPanel1.add(BotonMercado, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 340, 390, 280));
 
-        BotonPlantilla.setBackground(new java.awt.Color(102, 102, 102));
         BotonPlantilla.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        BotonPlantilla.setForeground(new java.awt.Color(255, 255, 0));
         BotonPlantilla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/juego/imagenes/Plantilla.jpg"))); // NOI18N
+        BotonPlantilla.setText("PLANTILLA");
+        BotonPlantilla.setToolTipText("");
+        BotonPlantilla.setAutoscrolls(true);
         BotonPlantilla.setFocusPainted(false);
+        BotonPlantilla.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BotonPlantilla.setOpaque(true);
         BotonPlantilla.addActionListener(this::BotonPlantillaActionPerformed);
         jPanel1.add(BotonPlantilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 230, 550));
 
