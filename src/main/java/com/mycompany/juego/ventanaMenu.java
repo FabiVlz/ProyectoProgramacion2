@@ -1,6 +1,8 @@
 package com.mycompany.juego;
 
+import java.awt.Image;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
@@ -52,8 +54,11 @@ public class ventanaMenu extends javax.swing.JFrame {
 
         BotonLiga.setBackground(new java.awt.Color(102, 102, 102));
         BotonLiga.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        BotonLiga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/juego/imagenes/LigaMx.jpg"))); // NOI18N
         BotonLiga.setText("Liga");
+        BotonLiga.setToolTipText("");
         BotonLiga.setFocusPainted(false);
+        BotonLiga.setMinimumSize(new java.awt.Dimension(79, 39));
         BotonLiga.addActionListener(this::BotonLigaActionPerformed);
         jPanel1.add(BotonLiga, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 390, 250));
 

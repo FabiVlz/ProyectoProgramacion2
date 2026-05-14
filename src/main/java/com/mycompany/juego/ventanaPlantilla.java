@@ -124,7 +124,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 porteroMouseClicked(evt);
             }
         });
-        panelPlantilla.add(portero, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 160, 199));
+        panelPlantilla.add(portero, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 160, 199));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -161,7 +161,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 delantero1MouseClicked(evt);
             }
         });
-        panelPlantilla.add(delantero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 160, 199));
+        panelPlantilla.add(delantero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 160, 199));
 
         delantero2.setBackground(new java.awt.Color(102, 102, 102));
         delantero2.setOpaque(true);
@@ -170,7 +170,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 delantero2MouseClicked(evt);
             }
         });
-        panelPlantilla.add(delantero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 160, 199));
+        panelPlantilla.add(delantero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 160, 199));
 
         defensa1.setBackground(new java.awt.Color(102, 102, 102));
         defensa1.setOpaque(true);
@@ -179,7 +179,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 defensa1MouseClicked(evt);
             }
         });
-        panelPlantilla.add(defensa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 160, 199));
+        panelPlantilla.add(defensa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 160, 199));
 
         defensa2.setBackground(new java.awt.Color(102, 102, 102));
         defensa2.setOpaque(true);
@@ -188,7 +188,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 defensa2MouseClicked(evt);
             }
         });
-        panelPlantilla.add(defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 160, 199));
+        panelPlantilla.add(defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 160, 199));
 
         botonVender.setBackground(new java.awt.Color(204, 0, 0));
         botonVender.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
