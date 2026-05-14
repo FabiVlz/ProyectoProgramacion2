@@ -100,13 +100,13 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         portero = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         panelJugadoresP = new javax.swing.JPanel();
-        botonRegresar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         delantero1 = new javax.swing.JLabel();
-        delantero2 = new javax.swing.JLabel();
         defensa1 = new javax.swing.JLabel();
         defensa2 = new javax.swing.JLabel();
         botonVender = new javax.swing.JButton();
+        delantero2 = new javax.swing.JLabel();
+        botonRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -134,13 +134,6 @@ public class ventanaPlantilla extends javax.swing.JFrame {
 
         panelPlantilla.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 330, 650));
 
-        botonRegresar.setBackground(new java.awt.Color(102, 102, 102));
-        botonRegresar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        botonRegresar.setText("Regresar");
-        botonRegresar.setFocusPainted(false);
-        botonRegresar.addActionListener(this::botonRegresarActionPerformed);
-        panelPlantilla.add(botonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -163,15 +156,6 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         });
         panelPlantilla.add(delantero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 160, 199));
 
-        delantero2.setBackground(new java.awt.Color(102, 102, 102));
-        delantero2.setOpaque(true);
-        delantero2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                delantero2MouseClicked(evt);
-            }
-        });
-        panelPlantilla.add(delantero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 160, 199));
-
         defensa1.setBackground(new java.awt.Color(102, 102, 102));
         defensa1.setOpaque(true);
         defensa1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -188,13 +172,29 @@ public class ventanaPlantilla extends javax.swing.JFrame {
                 defensa2MouseClicked(evt);
             }
         });
-        panelPlantilla.add(defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 160, 199));
+        panelPlantilla.add(defensa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 160, 199));
 
         botonVender.setBackground(new java.awt.Color(204, 0, 0));
         botonVender.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         botonVender.setText("VENDER");
         botonVender.addActionListener(this::botonVenderActionPerformed);
         panelPlantilla.add(botonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 573, 90, 70));
+
+        delantero2.setBackground(new java.awt.Color(102, 102, 102));
+        delantero2.setOpaque(true);
+        delantero2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                delantero2MouseClicked(evt);
+            }
+        });
+        panelPlantilla.add(delantero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, 160, 199));
+
+        botonRegresar.setBackground(new java.awt.Color(102, 102, 102));
+        botonRegresar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        botonRegresar.setText("Regresar");
+        botonRegresar.setFocusPainted(false);
+        botonRegresar.addActionListener(this::botonRegresarActionPerformed);
+        panelPlantilla.add(botonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -210,18 +210,9 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
-        this.dispose();
-        menu.setVisible(true);
-    }//GEN-LAST:event_botonRegresarActionPerformed
-
     private void delantero1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delantero1MouseClicked
         fachada.ponerTitular("DELANTERO1",delantero1,this,textoMedia);
     }//GEN-LAST:event_delantero1MouseClicked
-
-    private void delantero2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delantero2MouseClicked
-        fachada.ponerTitular("DELANTERO2",delantero2,this,textoMedia);
-    }//GEN-LAST:event_delantero2MouseClicked
 
     private void defensa1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_defensa1MouseClicked
         fachada.ponerTitular("DEFENSA1",defensa1,this,textoMedia);
@@ -239,6 +230,15 @@ public class ventanaPlantilla extends javax.swing.JFrame {
         fachada.venderJugador(this);
         actualizarPanelJugadores();
     }//GEN-LAST:event_botonVenderActionPerformed
+
+    private void delantero2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delantero2MouseClicked
+        fachada.ponerTitular("DELANTERO2",delantero2,this,textoMedia);
+    }//GEN-LAST:event_delantero2MouseClicked
+
+    private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
+        this.dispose();
+        menu.setVisible(true);
+    }//GEN-LAST:event_botonRegresarActionPerformed
     public final void actualizarPanelJugadores() {
 
         botones.sort((a, b) -> {

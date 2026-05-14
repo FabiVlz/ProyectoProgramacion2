@@ -55,7 +55,6 @@ public class ventanaMenu extends javax.swing.JFrame {
         BotonLiga.setBackground(new java.awt.Color(102, 102, 102));
         BotonLiga.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         BotonLiga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/juego/imagenes/LigaMx.jpg"))); // NOI18N
-        BotonLiga.setText("Liga");
         BotonLiga.setToolTipText("");
         BotonLiga.setFocusPainted(false);
         BotonLiga.setMinimumSize(new java.awt.Dimension(79, 39));
@@ -64,14 +63,14 @@ public class ventanaMenu extends javax.swing.JFrame {
 
         BotonMercado.setBackground(new java.awt.Color(102, 102, 102));
         BotonMercado.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        BotonMercado.setText("Mercado");
+        BotonMercado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/juego/imagenes/mercado.jpeg"))); // NOI18N
         BotonMercado.setFocusPainted(false);
         BotonMercado.addActionListener(this::BotonMercadoActionPerformed);
         jPanel1.add(BotonMercado, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 340, 390, 280));
 
         BotonPlantilla.setBackground(new java.awt.Color(102, 102, 102));
         BotonPlantilla.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        BotonPlantilla.setText("Plantilla");
+        BotonPlantilla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/juego/imagenes/Plantilla.jpg"))); // NOI18N
         BotonPlantilla.setFocusPainted(false);
         BotonPlantilla.addActionListener(this::BotonPlantillaActionPerformed);
         jPanel1.add(BotonPlantilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 230, 550));
