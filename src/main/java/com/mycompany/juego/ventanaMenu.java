@@ -42,6 +42,7 @@ public class ventanaMenu extends javax.swing.JFrame {
         BotonMercado = new javax.swing.JButton();
         BotonPlantilla = new javax.swing.JButton();
         BotonSalir = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -81,6 +82,9 @@ public class ventanaMenu extends javax.swing.JFrame {
         BotonSalir.setFocusPainted(false);
         BotonSalir.addActionListener(this::BotonSalirActionPerformed);
         jPanel1.add(BotonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/juego/imagenes/FondoCampo.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 650));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 650));
 
@@ -132,6 +136,7 @@ public class ventanaMenu extends javax.swing.JFrame {
     private javax.swing.JButton BotonMercado;
     private javax.swing.JButton BotonPlantilla;
     private javax.swing.JButton BotonSalir;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
