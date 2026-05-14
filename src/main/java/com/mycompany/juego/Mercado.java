@@ -20,6 +20,7 @@ public class Mercado {
         /*
         Defensas
         */
+        Jugador fabian = new Jugador("Fabian",1000000,"/com/mycompany/juego/imagenes/Fabian.jpg",67,"DEFENSA");this.JugadoresMercado.add(fabian);
         Jugador vanDijk = new Jugador("van Dijk",1000000,"/com/mycompany/juego/imagenes/vanDijk.jpg",90,"DEFENSA");this.JugadoresMercado.add(vanDijk);
         Jugador carvajal = new Jugador("Carvajal",600000,"/com/mycompany/juego/imagenes/Carvajal.jpg",85,"DEFENSA");this.JugadoresMercado.add(carvajal);
         Jugador marquinhos = new Jugador("Marquinhos",1200000,"/com/mycompany/juego/imagenes/Marquinhos.jpg",87,"DEFENSA");this.JugadoresMercado.add(marquinhos);
@@ -34,6 +35,8 @@ public class Mercado {
         /*
         Mediocampistas
         */
+        Jugador marvin = new Jugador("Marvin",1000000,"/com/mycompany/juego/imagenes/Marvin.jpg",87,"MEDIO");this.JugadoresMercado.add(marvin);
+        Jugador braulio = new Jugador("Braulio",1000000,"/com/mycompany/juego/imagenes/Braulio.jpg",87,"MEDIO");this.JugadoresMercado.add(braulio);
         Jugador deBruyne = new Jugador("DeBruyne",1000000,"/com/mycompany/juego/imagenes/deBruyne.jpg",87,"MEDIO");this.JugadoresMercado.add(deBruyne);
         Jugador calhanoglu = new Jugador("Calhanoglu",1000000,"/com/mycompany/juego/imagenes/Calhanoglu.jpg",86,"MEDIO");this.JugadoresMercado.add(calhanoglu);
         Jugador kimmich = new Jugador("Kimmich",1000000,"/com/mycompany/juego/imagenes/Kimmich.jpg",89,"MEDIO");this.JugadoresMercado.add(kimmich);
