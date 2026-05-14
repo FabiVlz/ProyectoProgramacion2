@@ -65,8 +65,8 @@ public class ventanaMenu extends javax.swing.JFrame {
         jPanel1.add(BotonLiga, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 390, 250));
 
         BotonMercado.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        BotonMercado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/juego/imagenes/mercado.jpeg"))); // NOI18N
-        BotonMercado.setText("MERCADO");
+        BotonMercado.setForeground(new java.awt.Color(204, 0, 51));
+        BotonMercado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/juego/imagenes/Mercadodefichajee.jpg"))); // NOI18N
         BotonMercado.setFocusPainted(false);
         BotonMercado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         BotonMercado.setOpaque(true);
