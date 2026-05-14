@@ -21,11 +21,11 @@ public class Mercado {
         Defensas
         */
         Jugador fabian = new Jugador("Fabian",1000000,"/com/mycompany/juego/imagenes/Fabian.jpg",67,"DEFENSA");this.JugadoresMercado.add(fabian);
-        Jugador vanDijk = new Jugador("van Dijk",1000000,"/com/mycompany/juego/imagenes/vanDijk.jpg",90,"DEFENSA");this.JugadoresMercado.add(vanDijk);
+        Jugador vanDijk = new Jugador("van Dijk",1000000,"/com/mycompany/juego/imagenes/van Dijk.jpg",90,"DEFENSA");this.JugadoresMercado.add(vanDijk);
         Jugador carvajal = new Jugador("Carvajal",600000,"/com/mycompany/juego/imagenes/Carvajal.jpg",85,"DEFENSA");this.JugadoresMercado.add(carvajal);
         Jugador marquinhos = new Jugador("Marquinhos",1200000,"/com/mycompany/juego/imagenes/Marquinhos.jpg",87,"DEFENSA");this.JugadoresMercado.add(marquinhos);
         Jugador upamecano = new Jugador("Upamecano",1150000,"/com/mycompany/juego/imagenes/Upamecano.jpg",85,"DEFENSA");this.JugadoresMercado.add(upamecano);
-        Jugador alexander = new Jugador("Alexander-Arnold",1110000,"/com/mycompany/juego/imagenes/Alexander.jpg",86,"DEFENSA");this.JugadoresMercado.add(alexander);
+        Jugador alexander = new Jugador("Alexander-Arnold",1110000,"/com/mycompany/juego/imagenes/Alexander-Arnold.jpg",86,"DEFENSA");this.JugadoresMercado.add(alexander);
         Jugador hakimi = new Jugador("Hakimi",1160000,"/com/mycompany/juego/imagenes/Hakimi.jpg",89,"DEFENSA");this.JugadoresMercado.add(hakimi);
         Jugador bastoni = new Jugador("Bastoni",1250000,"/com/mycompany/juego/imagenes/Bastoni.jpg",87,"DEFENSA");this.JugadoresMercado.add(bastoni);
         Jugador saliba = new Jugador("Saliba",1350000,"/com/mycompany/juego/imagenes/Saliba.jpg",87,"DEFENSA");this.JugadoresMercado.add(saliba);
