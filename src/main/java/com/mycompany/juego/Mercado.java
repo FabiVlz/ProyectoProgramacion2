@@ -35,8 +35,8 @@ public class Mercado {
         /*
         Mediocampistas
         */
-        Jugador marvin = new Jugador("Marvin",1000000,"/com/mycompany/juego/imagenes/Marvin.jpg",87,"MEDIO");this.JugadoresMercado.add(marvin);
-        Jugador braulio = new Jugador("Braulio",1000000,"/com/mycompany/juego/imagenes/Braulio.jpg",87,"MEDIO");this.JugadoresMercado.add(braulio);
+        Jugador marvin = new Jugador("Marvin",1000000,"/com/mycompany/juego/imagenes/Marvin.jpg",67,"MEDIO");this.JugadoresMercado.add(marvin);
+        Jugador braulio = new Jugador("Braulio",1000000,"/com/mycompany/juego/imagenes/Braulio.jpg",67,"MEDIO");this.JugadoresMercado.add(braulio);
         Jugador deBruyne = new Jugador("DeBruyne",1000000,"/com/mycompany/juego/imagenes/deBruyne.jpg",87,"MEDIO");this.JugadoresMercado.add(deBruyne);
         Jugador calhanoglu = new Jugador("Calhanoglu",1000000,"/com/mycompany/juego/imagenes/Calhanoglu.jpg",86,"MEDIO");this.JugadoresMercado.add(calhanoglu);
         Jugador kimmich = new Jugador("Kimmich",1000000,"/com/mycompany/juego/imagenes/Kimmich.jpg",89,"MEDIO");this.JugadoresMercado.add(kimmich);
