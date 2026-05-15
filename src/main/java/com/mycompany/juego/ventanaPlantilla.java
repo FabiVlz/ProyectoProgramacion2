@@ -16,6 +16,7 @@ public class ventanaPlantilla extends javax.swing.JFrame {
     ventanaMenu menu;
     ArrayList<JButton> botones;
     SistemaFacade fachada;
+    Mercado merca;
    
     /**
      * Creates new form ventanaPlantilla

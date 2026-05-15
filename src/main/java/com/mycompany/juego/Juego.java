@@ -35,6 +35,9 @@ public class Juego {
         Equipo equipo = new Equipo(botones);
         equipo.setNombre("LAS POTRAS");
         merca.cargarJugadores();
+        
+        Progreso.cargar(merca, equipo);
+
         ventanaInicio menu = new ventanaInicio(merca,equipo,botones);
         menu.setVisible(true);
     }

@@ -71,6 +71,7 @@ public class ventanaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonEmpezarActionPerformed
 
     private void BotonTerminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTerminarActionPerformed
+        Progreso.guardar(merca, equipo);
         System.exit(0);
     }//GEN-LAST:event_BotonTerminarActionPerformed
 

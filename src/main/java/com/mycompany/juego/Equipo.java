@@ -99,6 +99,8 @@ public class Equipo {
                     }
 
                     setCompleto();
+                    
+                    Progreso.guardar(mercado.merca, this);
 
                     return String.valueOf(dinero);
 
@@ -147,6 +149,9 @@ public class Equipo {
     public int getDinero() {
         return dinero;
     }
+    public void setDinero(int dinero) {
+    this.dinero = dinero;
+    }
     public void ponerTitular(String posicion,JLabel jugadorTitular,ventanaPlantilla vP,JLabel textoMedia){
         if (jugadorSeleccionado == null){
             JOptionPane.showMessageDialog(vP, "Seleccione un jugador");
@@ -166,6 +171,7 @@ public class Equipo {
                     jugadorSeleccionado = null;
                     textoMedia.setText(String.valueOf(calcularMedia()));
                     System.out.println(titulares);
+                    Progreso.guardar(vP.merca, this);
                 }
                 else {
                     JOptionPane.showMessageDialog(vP, "Ya hay un jugador en este lugar");
@@ -200,10 +206,12 @@ public class Equipo {
                         jugadorSeleccionado.setComprado(false);
                         jugadoresEquipo.remove(jugadorSeleccionado);
                         dinero += (jugadorSeleccionado.getPrecio()*0.65);
+                        Progreso.guardar(vP.merca, this);
                         jugadorSeleccionado = null;
                         b.putClientProperty("jugador",null);
                         b.revalidate();
                         b.repaint();
+                        Progreso.guardar(vP.merca, this);
                         break;
                     }
                     else{
