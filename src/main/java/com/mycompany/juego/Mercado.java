@@ -38,7 +38,7 @@ public class Mercado {
         Jugador marvin = new Jugador("Marvin",0,"/com/mycompany/juego/imagenes/Marvin.jpg",67,"MEDIO");this.JugadoresMercado.add(marvin);
         Jugador braulio = new Jugador("Braulio",0,"/com/mycompany/juego/imagenes/Braulio.jpg",67,"MEDIO");this.JugadoresMercado.add(braulio);
         Jugador deBruyne = new Jugador("DeBruyne",1600000,"/com/mycompany/juego/imagenes/deBruyne.jpg",87,"MEDIO");this.JugadoresMercado.add(deBruyne);
-        Jugador calhanoglu = new Jugador("Calhanoglu",1400000,"/com/mycompany/juego/imagenes/Calhanoglu.jpg",86,"MEDIO");this.JugadoresMercado.add(calhanoglu);
+        Jugador calhanoglu = new Jugador("Calhanoglu",1400000,"/com/mycompany/juego/imagenes/Çalhanoğlu.jpg",86,"MEDIO");this.JugadoresMercado.add(calhanoglu);
         Jugador kimmich = new Jugador("Kimmich",2300000,"/com/mycompany/juego/imagenes/Kimmich.jpg",89,"MEDIO");this.JugadoresMercado.add(kimmich);
         Jugador rodri = new Jugador("Rodri",2800000,"/com/mycompany/juego/imagenes/Rodri.jpg",90,"MEDIO");this.JugadoresMercado.add(rodri);
         Jugador rice = new Jugador("Rice",1600000,"/com/mycompany/juego/imagenes/Rice.jpg",87,"MEDIO");this.JugadoresMercado.add(rice);
@@ -57,12 +57,12 @@ public class Mercado {
         Jugador son = new Jugador("Son",1200000,"/com/mycompany/juego/imagenes/Son.jpg",85,"DELANTERO");this.JugadoresMercado.add(son);
         Jugador kane = new Jugador("Harry Kane",2300000,"/com/mycompany/juego/imagenes/Kane.jpg",89,"DELANTERO");this.JugadoresMercado.add(kane);
         Jugador salah = new Jugador("Salah",3500000,"/com/mycompany/juego/imagenes/Salah.jpg",91,"DELANTERO");this.JugadoresMercado.add(salah);
-        Jugador mbappe = new Jugador("Mbappe",3500000,"/com/mycompany/juego/imagenes/Mbappe.jpg",91,"DELANTERO");this.JugadoresMercado.add(mbappe);
+        Jugador mbappé = new Jugador("Mbappé",3500000,"/com/mycompany/juego/imagenes/Mbappé.jpg",91,"DELANTERO");this.JugadoresMercado.add(mbappé);
         Jugador raphinha = new Jugador("Raphinha",2300000,"/com/mycompany/juego/imagenes/Raphinha.jpg",89,"DELANTERO");this.JugadoresMercado.add(raphinha);
-        Jugador vini = new Jugador("Vinicius Jr",2300000,"/com/mycompany/juego/imagenes/Vini.jpg",89,"DELANTERO");this.JugadoresMercado.add(vini);
+        Jugador vini = new Jugador("Vinicius Jr",2300000,"/com/mycompany/juego/imagenes/Vini Jr..jpg",89,"DELANTERO");this.JugadoresMercado.add(vini);
         Jugador saka = new Jugador("Saka",1900000,"/com/mycompany/juego/imagenes/Saka.jpg",88,"DELANTERO");this.JugadoresMercado.add(saka);
         Jugador kvaratskhelia = new Jugador("Kvaratskhelia",1600000,"/com/mycompany/juego/imagenes/Kvaratskhelia.jpg",87,"DELANTERO");this.JugadoresMercado.add(kvaratskhelia);
-        Jugador yamal = new Jugador("Lamine Yamal",2300000,"/com/mycompany/juego/imagenes/Yamal.jpg",89,"DELANTERO");this.JugadoresMercado.add(yamal);
+        Jugador yamal = new Jugador("Lamine Yamal",2300000,"/com/mycompany/juego/imagenes/Lamine Yamal.jpg",89,"DELANTERO");this.JugadoresMercado.add(yamal);
         
     }
 }
