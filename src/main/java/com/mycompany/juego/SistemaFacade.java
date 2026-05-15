@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 /**
  *
- * @author Jesus Fabian Valenzuela
+ * @author Fabian
  */
 public class SistemaFacade {
 

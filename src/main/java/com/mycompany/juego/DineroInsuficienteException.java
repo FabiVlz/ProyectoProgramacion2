@@ -2,7 +2,7 @@ package com.mycompany.juego;
 
 /**
  *
- * @author Bilsox
+ * @author Fabian
  */
 public class DineroInsuficienteException extends Exception {
 
@@ -10,5 +10,5 @@ public class DineroInsuficienteException extends Exception {
         super(mensaje);
     }
     
-    //isa
+    
 }

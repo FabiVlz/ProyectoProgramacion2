@@ -1,9 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.juego;
-
+/**
+ *
+ * @author yisus
+ */
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.JButton;

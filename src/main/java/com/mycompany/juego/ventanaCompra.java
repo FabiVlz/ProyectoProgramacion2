@@ -2,14 +2,9 @@ package com.mycompany.juego;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
 /**
  *
- * @author fabivlzmun
+ * @author Monje
  */
 public class ventanaCompra extends javax.swing.JFrame {
     ventanaMercado mercado;

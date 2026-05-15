@@ -2,7 +2,7 @@ package com.mycompany.juego;
 
 /**
  *
- * @author Bilsox
+ * @author yisus
  */
 public interface Transferible {
 

@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 /**
  *
- * @author Bilsox
+ * @author yisus
  */
 public class Equipo {
     private String nombre;

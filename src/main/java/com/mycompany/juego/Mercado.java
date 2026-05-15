@@ -2,7 +2,7 @@ package com.mycompany.juego;
 import java.util.ArrayList;
 /**
  *
- * @author Bilsox
+ * @author Fabian
  */
 public class Mercado {
     ArrayList<Jugador> JugadoresMercado = new ArrayList <>();

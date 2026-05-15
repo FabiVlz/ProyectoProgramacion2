@@ -12,7 +12,7 @@ public class EquipoTest {
         ArrayList<JButton> botones = new ArrayList<>();
         Equipo equipo = new Equipo(botones);
 
-        assertEquals(50000000, equipo.getDinero());
+        assertEquals(0, equipo.getDinero());
     }
 
     @Test

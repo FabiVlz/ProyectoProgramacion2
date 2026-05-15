@@ -2,7 +2,7 @@ package com.mycompany.juego;
 
 /**
  *
- * @author Bilsox xd
+ * @author Fabian
  */
 public class Jugador implements Transferible{
     private String nombre;

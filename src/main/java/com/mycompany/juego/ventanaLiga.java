@@ -2,14 +2,9 @@ package com.mycompany.juego;
 
 import javax.swing.table.DefaultTableModel;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
 /**
  *
- * @author yisus
+ * @author Monje
  */
 public class ventanaLiga extends javax.swing.JFrame {
     ventanaMenu menu;
