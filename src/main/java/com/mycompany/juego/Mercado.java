@@ -63,6 +63,7 @@ public class Mercado {
         Jugador saka = new Jugador("Saka",1900000,"/com/mycompany/juego/imagenes/Saka.jpg",88,"DELANTERO");this.JugadoresMercado.add(saka);
         Jugador kvaratskhelia = new Jugador("Kvaratskhelia",1600000,"/com/mycompany/juego/imagenes/Kvaratskhelia.jpg",87,"DELANTERO");this.JugadoresMercado.add(kvaratskhelia);
         Jugador yamal = new Jugador("Lamine Yamal",2300000,"/com/mycompany/juego/imagenes/Lamine Yamal.jpg",89,"DELANTERO");this.JugadoresMercado.add(yamal);
+        Jugador doue = new Jugador("doue",2300000,"/com/mycompany/juego/imagenes/Doué.jpg",89,"DELANTERO");this.JugadoresMercado.add(doue);
         
     }
 }
