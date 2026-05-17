@@ -37,7 +37,7 @@ public class Juego {
         merca.cargarJugadores();
         
         Progreso.cargar(merca, equipo);
-
+        Musica.reproducirMusica("/musica/Canción de FIFA 22 Mobile ⧸ FIFA 22.wav");
         ventanaInicio menu = new ventanaInicio(merca,equipo,botones);
         menu.setVisible(true);
     }

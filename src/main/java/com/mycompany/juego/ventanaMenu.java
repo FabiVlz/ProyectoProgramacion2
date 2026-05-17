@@ -132,6 +132,7 @@ public class ventanaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonMercadoActionPerformed
 
     private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
+        Musica.detenerMusica();
         Progreso.guardar(merca, equipo);
         System.exit(0);
     }//GEN-LAST:event_BotonSalirActionPerformed
