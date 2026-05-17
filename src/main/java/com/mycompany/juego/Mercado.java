@@ -31,7 +31,7 @@ public class Mercado {
         Jugador saliba = new Jugador("Saliba",1600000,"/com/mycompany/juego/imagenes/Saliba.jpg",87,"DEFENSA");this.JugadoresMercado.add(saliba);
         Jugador nuno = new Jugador("Nuno Mendes",1300000,"/com/mycompany/juego/imagenes/Nuno.jpg",86,"DEFENSA");this.JugadoresMercado.add(nuno);
         Jugador pacho = new Jugador("Pacho",1400000,"/com/mycompany/juego/imagenes/Pacho.jpg",86,"DEFENSA");this.JugadoresMercado.add(pacho);
-        Jugador norza = new Jugador("Norza",600000,"/com/mycompany/juego/imagenes/Norza.png",99,"DEFENSA"); this.JugadoresMercado.add(norza);
+        Jugador norza = new Jugador("Norza",6000000,"/com/mycompany/juego/imagenes/Norza.png",99,"DEFENSA"); this.JugadoresMercado.add(norza);
         /*
         Mediocampistas
         */
@@ -63,7 +63,7 @@ public class Mercado {
         Jugador saka = new Jugador("Saka",1900000,"/com/mycompany/juego/imagenes/Saka.jpg",88,"DELANTERO");this.JugadoresMercado.add(saka);
         Jugador kvaratskhelia = new Jugador("Kvaratskhelia",1600000,"/com/mycompany/juego/imagenes/Kvaratskhelia.jpg",87,"DELANTERO");this.JugadoresMercado.add(kvaratskhelia);
         Jugador yamal = new Jugador("Lamine Yamal",2300000,"/com/mycompany/juego/imagenes/Lamine Yamal.jpg",89,"DELANTERO");this.JugadoresMercado.add(yamal);
-        Jugador doue = new Jugador("doue",2300000,"/com/mycompany/juego/imagenes/Doué.jpg",89,"DELANTERO");this.JugadoresMercado.add(doue);
+        Jugador doue = new Jugador("doue",4000000,"/com/mycompany/juego/imagenes/Doué.jpg",89,"DELANTERO");this.JugadoresMercado.add(doue);
         
     }
 }
