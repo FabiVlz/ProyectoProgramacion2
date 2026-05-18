@@ -17,6 +17,7 @@ public class Mercado {
         Jugador alisson = new Jugador("Alisson",2300000,"/com/mycompany/juego/imagenes/Alisson.jpg",89,"PORTERO");this.JugadoresMercado.add(alisson);
         Jugador maignan = new Jugador("Maignan",1600000,"/com/mycompany/juego/imagenes/Maignan.jpg",87,"PORTERO");this.JugadoresMercado.add(maignan);
         Jugador donnarumma = new Jugador("Donnaruma",2300000,"/com/mycompany/juego/imagenes/Donnarumma.jpg",89,"PORTERO");this.JugadoresMercado.add(donnarumma);
+        Jugador carrasco = new Jugador("Carrasco",9000000,"/com/mycompany/juego/imagenes/Carrasco.jpg",98,"PORTERO");this.JugadoresMercado.add(carrasco);
         /*
         Defensas
         */
